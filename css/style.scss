@@ -59,7 +59,7 @@ h2{
 h3{
 	@include font-size(2.5);
 	letter-spacing: -1px;
-	color: $azul;
+	color: $verde;
 	font-weight:400;
 }
 
@@ -115,10 +115,10 @@ h3{
 }
 .btn-success{
 	background: $verde !important;
-	color:#000;
+	color:#000 !important;
 }
-.btn-success:hover{
-	color:#000;
+.btn-success:hover,.btn-success:active{
+	color:#000 !important;
 }
 
 .background {
@@ -216,7 +216,7 @@ header{
 		margin-bottom: 20px;
 		color:$verde;
 	}
-	.teste{
+	.passos{
 		display: inline-block;
 		margin-bottom: 10px;
 		span{
@@ -236,7 +236,6 @@ header{
 		}
 	}
 }
-
 
 /*
 	MIDDLE
@@ -266,6 +265,44 @@ header{
 	}
 }
 
+section.crossfit{
+	.crossfit-3{
+		i{
+			@include font-size(5);
+			margin-bottom: 10px;
+		}
+		h3{
+			margin-bottom: 10px;
+		}
+		p{
+			line-height: 20px;
+		}
+	}
+	.crossfit-beneficios{
+		margin-top: 60px;
+		h3{
+			margin-bottom: 20px;
+		}
+		p{
+			margin-right: 40px;
+			line-height: 20px;
+		}
+		figure{
+			margin-bottom:20px;
+		}
+		ul{
+			li{
+				margin-bottom: 10px;
+				i{
+					float: left;
+					margin-right: 10px;
+					margin-top: 3px;
+					@include font-size(1.2);
+				}
+			}
+		}
+	}
+}
 section.blocos{
 	.bloco{
 		margin-bottom: 40px;
@@ -299,6 +336,9 @@ section.blocos{
 		margin:auto;
 	}
 }
+.como-chegar{
+	margin-bottom:20px;
+}
 .background-familia{
 	min-height:450px;
 	.middle-parallax{
@@ -314,14 +354,42 @@ section.blocos{
     vertical-align:middle;
     text-align:center;
 }
-
-
+.modal{
+	color:#333;
+}
+.btn-facebook{
+	background:#3b5998;
+	color:#fff;
+	border:none;
+}
+.btn-facebook:hover{
+	background:#3b5998;
+	color:#fff;
+}
+.btn-instagram{
+	background:#8a3ab9;
+	color:#fff;
+	border:none;
+}
+.btn-instagram:hover{
+	background:#8a3ab9;
+	color:#fff;
+}
+.btn-youtube{
+	background:#cc181e;
+	color:#fff;
+	border:none;
+}
+.btn-youtube:hover{
+	background:#cc181e;
+	color:#fff;
+}
 /*
 	FOOTER
 */
 
 footer{
-
+	margin-bottom:20px;
 }
 
 /*********************
@@ -355,6 +423,13 @@ footer{
 		h2{
 			@include font-size(3);
 		}		
+	}
+	section.crossfit{
+		.crossfit-beneficios{
+			p{
+				margin-right: 0;
+			}
+		}
 	}
 }
 // @media only screen and (max-width : 480px) {

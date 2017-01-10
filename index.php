@@ -39,6 +39,43 @@
 				</div>
 			</div>
 		</div>
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title text-center" id="myModalLabel">Agende sua Aula Experimental</h4>
+		      </div>
+		      <div class="modal-body">
+		      		<p>Você irá vivenciar um treino real de Crossfit para entender melhor como podemos te ajudar. O que está esperando? :)</p>
+					<form action="" role="form" data-toggle="validator" id="leadmais-form">
+						<input type="hidden" name="data[Account][token]" 	value=""  />
+						<input type="hidden" name="data[Lead][interesting]" value="" />
+						<input type="hidden" name="data[Product][token]" 	value=""  />	
+						<input type="hidden" name="data[Source][token]" 	value="" />
+
+						<div class="form-group has-feedback">
+							<label for="nome" class="sr-only">Nome</label>
+							<input name="data[Lead][title]" id="leadmais-title" type="text" placeholder="Seu Nome" class="form-control" value="<?php echo ( !empty( $coockie) ) ? $coockie['title'] : '';?>" required />
+						</div>
+						<div class="form-group has-feedback">
+							<input name="data[Lead][email]" id="leadmais-email" type="email" placeholder="Seu E-mail" class="form-control" value="<?php echo ( !empty( $coockie) ) ? $coockie['email'] : '';?>" required />
+						</div>
+						<div class="form-group has-feedback">
+							<input name="data[Lead][phone]" id="leadmais-phone" type="text" placeholder="DDD + Celular ou Fixo" class="form-control telefone" value="<?php echo ( !empty( $coockie) ) ? $coockie['phone'] : '';?>" required />
+						</div>
+						<div class="form-group">
+							<textarea name="data[Attribute][mensagem]" id="leadmais-mensagem" placeholder="Mensagem" rows="4" class="form-control"><?php //echo $mensagem;?></textarea>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-success btn-lg btn-block" id="leadmais-submit">Enviar</button>
+						</div>
+					</form>
+		      </div>
+		    </div>
+		  </div>
+		</div>
 		<div class="fullscreen background parallax" style="background-image:url('img/bg-main.jpg?1');" data-img-width="1600" data-img-height="1064">
 		    <div id="video-wrap" class="video-wrap">
 			    <div class="content-overlay">
@@ -64,9 +101,10 @@
 								<div class="menu-blocked hidden-sm hidden-xs col-sm-6 col-md-6 col-lg-6 pull-right">
 									<nav class="clearfix">
 										<ul class="list-unstyled nav navbar-nav">
+											<li><a data-scroll href="#crossfit">Crossfit</a></li>
 											<li><a data-scroll href="#depoimentos">Depoimentos</a></li>
-											<li><a href="#">Fotos</a></li>
-											<li><a href="#">Localização</a></li>
+											<li><a data-scroll href="#fotos">Fotos</a></li>
+											<li><a data-scroll href="#localizacao">Localização</a></li>
 											<li><a href="#"><span class="glyphicon glyphicon-earphone"></span> 81 3339-1022</a></li>
 										</ul>
 									</nav>
@@ -75,11 +113,11 @@
 						</header>
 						<section class="highlight text-center">
 							<h2>Prepare-se para mudar de vida!</h2>
-							<p>O Crossfit é lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita deserunt vel eius perferendis, perspiciatis reprehenderit impedit repellat iusto.</p>
+							<p>O CrossFit é um programa de treinamento de força e condicionamento físico geral baseado em movimentos funcionais, feitos em alta intensidade e constantemente variados.</p>
 							<div class="clearfix">
-								<div class="teste"><span class="hidden-xs">1º</span> <a href="#" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-play-circle"></i> Entenda o Crossfit</a></div>
-								<div class="teste"><span class="hidden-xs">2º</span> <a href="#" class="btn btn-lg btn-success"><i class="glyphicon glyphicon-ok"></i> Agende sua Aula Experimental</a></div>
-								<div class="teste hidden-xs"><span class="hidden-xs">3º</span> <a href="#" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-thumbs-up"></i> Mude de Vida</a></div>
+								<div class="passos"><span class="hidden-xs">1º</span> <a href="#" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-play-circle"></i> Entenda o Crossfit</a></div>
+								<div class="passos"><span class="hidden-xs">2º</span> <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a></div>
+								<div class="passos hidden-xs"><span class="hidden-xs">3º</span> <a href="#" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-thumbs-up"></i> Mude de Vida</a></div>
 							</div>
 						</section>
 			    	</div>
@@ -89,12 +127,80 @@
 				</video>
 			</div>
 		</div>
+		<span id="crossfit"></span>
+		<section class="middle middle-margin crossfit">
+			<div class="container">
+				<div class="title">
+					<h2>Sobre o Crossfit</h2>
+					<p>O Crossfit foi desenvolvido para melhorar as capacidades fisiológicas de qualquer tipo de pessoa, desde atletas até idosos ou jovens. </p>
+				</div>
+				<div class="clearfix row crossfit-3">
+					<!-- <p>Os treinos do Crossfit são orientados em três principais princípios:</p> -->
+					<div class="col-sm-4 col-md-4 col-lg-4 text-center">
+						<i class="fa fa-bolt" aria-hidden="true"></i>
+						<b><h3>Movimentos Funcionais</h3></b>
+						<p>São todos aqueles que pode ser aplicado no seu dia-a-dia, como agachar, arremesar, saltar, levantar objetos, dentre outras atividades.</p>
+					</div>
+					<div class="col-sm-4 col-md-4 col-lg-4 text-center">
+						<i class="fa fa-bolt" aria-hidden="true"></i>
+						<b><h3>Alta Intensidade</h3></b>
+						<p>Os treinos são realizados em alta intensidade, porém de forma relativa às condições físicas do praticante.</p>
+					</div>
+					<div class="col-sm-4 col-md-4 col-lg-4 text-center">
+						<i class="fa fa-bolt" aria-hidden="true"></i>
+						<b><h3>Constantemente Variados</h3></b>
+						<p>Para que o corpo seja sempre estimulado a se adaptar e continuar progredindo independente do tempo de prática.</p>
+					</div>
+				</div>
+				<div class="clearfix row crossfit-beneficios">
+					<div class="col-sm-7 col-md-7 col-lg-7">
+						<figure><img src="img/bunker1.jpg" class="img-responsive"></figure>
+						<p>O objetivo do <strong>Crossfit</strong> é potencializar todas as principais capacidades físicas do ser humano, como a resistência respiratória e cardiovascular, a resistência muscular, a flexibilidade, força, coordenação, potência, agilidade, equilíbrio e velocidade. </p>
+						<p>Atualmente, os treinos de <strong>Crossfit</strong> são os mais populares em academias de todo o mundo, justamente pela facilidade de adaptação que os exercícios deste programa de treinamento proporcionam para as pessoas de qualquer idade ou nível físico. </p>
+						<p>O principal equipamento para a prática do <strong>Crossfit</strong> é o próprio corpo, mas também podem ser utilizadas algumas ferramentas básicas, como cordas, pesos, caixas, elásticos, correntes, entre outros que auxiliem na execução de alguns exercícios. </p>
+					</div>
+					<div class="col-sm-5 col-md-5 col-lg-5">
+						<h3>Benefícios</h3>
+						<ul class="list-unstyled">
+							<li><i class="glyphicon glyphicon-ok"></i> Redução de medidas e percentual de gordura;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Melhora na flexibilidade;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Ganho de massa muscular;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Definição de tônus muscular;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Melhora no condicionamento físico;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Melhora na qualidade do sono;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Aumento de resistência muscular;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Melhora no controle corporal;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Melhora na secreção hormonal;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Melhora no equilíbrio;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Redução de stress;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Espírito de equipe;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Melhora na capacidade cardiovascular e respiratória;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Aumento de energia;</li>
+							<li><i class="glyphicon glyphicon-ok"></i> Treinos variados e em grupo.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="not-fullscreen background background-familia parallax" style="background-image:url('img/bg1.jpg');" data-img-width="1600" data-img-height="1064">
+			<div class="container middle-parallax">
+				<div class="content-parallax">
+					<h2>Faça parte da família Bunker</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga repellat blanditiis alias voluptatem ullam in optio nam, quas dolores rerum magni.!</p>
+					<div class="text-center">
+						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<span id="depoimentos"></span>
 		<section class="middle middle-margin blocos">
 			<div class="container">
 				<div class="title">
 					<h2>Quem já pratica</h2>
-					<p>Pessoas comuns, objetivos diversos, evolução, superação e muita saúde. Conheça as histórias inspiradoras dos nossos alunos!</p>
+					<p>Pessoas comuns, objetivos diversos, evolução, superação e muita saúde. Conheça as histórias inspiradoras dos nossos alunos. Você é o próximo!</p>
 				</div>
 				<div class="clearfix row">
 					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
@@ -152,10 +258,12 @@
 		<div class="not-fullscreen background background-familia parallax" style="background-image:url('img/bg1.jpg');" data-img-width="1600" data-img-height="1064">
 			<div class="container middle-parallax">
 				<div class="content-parallax">
-					<h2>Faça parte da família Bunker</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga repellat blanditiis alias voluptatem ullam in optio nam, quas dolores rerum magni.!</p>
+					<h2>Eventos e Novidades</h2>
+					<p>Lorem ipsum nemo illum debitis harum similique vero inventore enim consequatur, deserunt aspernatur modi exercitationem numquam. Sint!</p>
 					<div class="text-center">
-						<a href="#" class="btn btn-lg btn-success btn-block"><i class="glyphicon glyphicon-ok"></i> Agende sua Aula Experimental</a>
+						<a href="#" class="btn btn-lg btn-default btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
+						<a href="#" class="btn btn-lg btn-default btn-instagram"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
+						<a href="#" class="btn btn-lg btn-default btn-youtube"><i class="fa fa-youtube" aria-hidden="true"></i> YouTube</a>
 					</div>
 				</div>
 			</div>
@@ -165,7 +273,7 @@
 		<section class="middle middle-margin blocos">
 			<div class="container">
 				<div class="title">
-					<h2><h2>Um pouco mais da Bunker</h2>
+					<h2>Mais da Bunker</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ratione est, optio nobis dolores quidem repellat modi saepe.</p></h2>
 				</div>
 				<div class="clearfix row">
@@ -194,34 +302,39 @@
 						<img src="img/foto1.jpg" class="img-responsive">
 					</div>
 				</div>
+				<div class="text-center">
+					<a href="#" class="btn btn-lg btn-success btn-block" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a>
+				</div>
 			</div>
 		</section>
 
 
-		<div class="not-fullscreen background parallax" style="background-image:url('img/bg2.jpg');" data-img-width="1600" data-img-height="1064" data-diff="100" data-oriz-pos="100%">
+		<span id="localizacao"></span>
+		<div class="not-fullscreen background background-familia parallax" style="background-image:url('img/bg1.jpg');" data-img-width="1600" data-img-height="1064">
+			<div class="container middle-parallax como-chegar">
+				<div class="content-parallax">
+					<h2>Como Chegar?</h2>
+					<p>A Bunker está localizada na R. José da Silva Lucena, 515 - Boa Viagem - Recife/PE. <br> <i class="fa fa-phone" aria-hidden="true"></i> 81 3339-3333</p>
+					<div class="text-center">
+						<a href="#" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-map-marker"></i> Acessar Mapa</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!--<div class="not-fullscreen background parallax" style="background-image:url('img/bg2.jpg');" data-img-width="1600" data-img-height="1064" data-diff="100" data-oriz-pos="100%">
 			<div class="container middle-parallax">
 				<div class="content-parallax">
 					<h2>Conheça a Bunker Defense</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga repellat blanditiis alias voluptatem ullam in optio nam, quas dolores rerum magni.!</p>
 				</div>
 			</div>
-		</div>
-
-
-
-
-
-
-
-
-
-
-
+		</div>-->
 
 		<footer class="footer">
 			<div class="container">
-				footer
-				<br><br><br><br><br><br><br><br>
+				© Bunker Equilíbrio Crossfit.
 			</div>
 		</footer> 
 		<!-- </div> -->
