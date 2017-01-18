@@ -16,117 +16,136 @@
     <!-- <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" /> -->
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
     <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css?<?php echo rand(); ?>" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <meta property="og:url" content="" />
+    <!-- <meta property="og:url" content="" />
     <meta property="og:description" content="" />
-    <meta property="og:title" content="<" />
-    <meta property="og:image" content="" />
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" /> -->
 </head>
 <body id="" class="">
-	<div id="menu-mobile" class="visible-xs visible-sm">
-			<div class="container">
-				<div class="collapse" id="collapseMenu" aria-expanded="false" style="height: 0px;">
-					<nav class="">
-						<ul class="list-unstyled text-center">
-							<li><a data-scroll href="#depoimentos">Depoimentos</a></li>
-							<li><a href="#">Eventos</a></li>
-							<!-- <li><a href="#">Vídeos</a></li> -->
-							<li><a href="#">Localização</a></li>
-							<li><a href="#">Aula Experimental</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
-		<!-- Modal -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		        <h4 class="modal-title text-center" id="myModalLabel">Agende sua Aula Experimental</h4>
-		      </div>
-		      <div class="modal-body">
-		      		<p>Você irá vivenciar um treino real de Crossfit para entender melhor como podemos te ajudar. O que está esperando? :)</p>
-					<form action="" role="form" data-toggle="validator" id="leadmais-form">
-						<input type="hidden" name="data[Account][token]" 	value=""  />
-						<input type="hidden" name="data[Lead][interesting]" value="" />
-						<input type="hidden" name="data[Product][token]" 	value=""  />	
-						<input type="hidden" name="data[Source][token]" 	value="" />
 
-						<div class="form-group has-feedback">
-							<label for="nome" class="sr-only">Nome</label>
-							<input name="data[Lead][title]" id="leadmais-title" type="text" placeholder="Seu Nome" class="form-control" value="<?php echo ( !empty( $coockie) ) ? $coockie['title'] : '';?>" required />
-						</div>
-						<div class="form-group has-feedback">
-							<input name="data[Lead][email]" id="leadmais-email" type="email" placeholder="Seu E-mail" class="form-control" value="<?php echo ( !empty( $coockie) ) ? $coockie['email'] : '';?>" required />
-						</div>
-						<div class="form-group has-feedback">
-							<input name="data[Lead][phone]" id="leadmais-phone" type="text" placeholder="DDD + Celular ou Fixo" class="form-control telefone" value="<?php echo ( !empty( $coockie) ) ? $coockie['phone'] : '';?>" required />
-						</div>
-						<div class="form-group">
-							<textarea name="data[Attribute][mensagem]" id="leadmais-mensagem" placeholder="Mensagem" rows="4" class="form-control"><?php //echo $mensagem;?></textarea>
-						</div>
-						<div class="form-group">
-							<button class="btn btn-success btn-lg btn-block" id="leadmais-submit">Enviar</button>
-						</div>
-					</form>
-		      </div>
-		    </div>
-		  </div>
-		</div>
-		<div class="fullscreen background parallax" style="background-image:url('img/bg-main.jpg?1');" data-img-width="1600" data-img-height="1064">
-		    <div id="video-wrap" class="video-wrap">
-			    <div class="content-overlay">
-					<div class="container">
-						<header>
-							<div class="container">
-								<div id="menu-btn" class="visible-xs visible-sm pull-right">
-									<a class="btn btn-lg btn-default collapsed" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false"> 
-										<span class="sr-only">Toggle navigation</span> 
-										<span class="icon-bar"></span> 
-										<span class="icon-bar"></span> 
-										<span class="icon-bar"></span> 
-									</a>
-								</div>
-								<div class="brand col-xs-6 col-sm-6 col-md-6 col-lg-6">
-									<h1 class="header-logo">
-										<a href="#">
-											<img src="img/marca.png" alt="Bunker Crossfit">
-											<span class="sr-only">Bunker Crossfit</span>
-										</a>
-									</h1>
-								</div>
-								<div class="menu-blocked hidden-sm hidden-xs col-sm-6 col-md-6 col-lg-6 pull-right">
-									<nav class="clearfix">
-										<ul class="list-unstyled nav navbar-nav">
-											<li><a data-scroll href="#crossfit">Crossfit</a></li>
-											<li><a data-scroll href="#depoimentos">Depoimentos</a></li>
-											<li><a data-scroll href="#fotos">Fotos</a></li>
-											<li><a data-scroll href="#localizacao">Localização</a></li>
-											<li><a href="#"><span class="glyphicon glyphicon-earphone"></span> 81 3339-1022</a></li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-						</header>
-						<section class="highlight text-center">
-							<h2>Prepare-se para mudar de vida!</h2>
-							<p>O CrossFit é um programa de treinamento de força e condicionamento físico geral baseado em movimentos funcionais, feitos em alta intensidade e constantemente variados.</p>
-							<div class="clearfix">
-								<div class="passos"><span class="hidden-xs">1º</span> <a href="#" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-play-circle"></i> Entenda o Crossfit</a></div>
-								<div class="passos"><span class="hidden-xs">2º</span> <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a></div>
-								<div class="passos hidden-xs"><span class="hidden-xs">3º</span> <a href="#" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-thumbs-up"></i> Mude de Vida</a></div>
-							</div>
-						</section>
-			    	</div>
-				</div>
-				<video preload="metadata" autoplay loop id="my-video" class="hidden-xs">
-					<source src="img/bunker2.mp4" type="video/mp4">
-				</video>
+	<!-- Menu Mobile -->
+	<div id="menu-mobile" class="visible-xs visible-sm">
+		<div class="container">
+			<div class="collapse" id="collapseMenu" aria-expanded="false" style="height: 0px;">
+				<nav class="">
+					<ul class="list-unstyled text-center">
+						<li><a data-scroll href="#crossfit">Crossfit</a></li>
+						<li><a data-scroll href="#depoimentos">Depoimentos</a></li>
+						<li><a data-scroll href="#fotos">@bunker_cf</a></li>
+						<li><a data-scroll href="#localizacao">Localização</a></li>
+					</ul>
+				</nav>
 			</div>
 		</div>
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title text-center" id="myModalLabel">Agende sua Aula Experimental</h4>
+	      </div>
+	      <div class="modal-body">
+	      		<p>Participe de um treino real de Crossfit e entenda melhor como podemos te ajudar. O que está esperando? :)</p>
+				<form action="" role="form" data-toggle="validator" id="leadmais-form">
+					<input type="hidden" name="data[Account][token]" 	value=""  />
+					<input type="hidden" name="data[Lead][interesting]" value="" />
+					<input type="hidden" name="data[Product][token]" 	value=""  />	
+					<input type="hidden" name="data[Source][token]" 	value="" />
+
+					<div class="form-group has-feedback">
+						<label for="nome" class="sr-only">Nome</label>
+						<input name="data[Lead][title]" id="leadmais-title" type="text" placeholder="Seu Nome" class="form-control" value="<?php echo ( !empty( $coockie) ) ? $coockie['title'] : '';?>" required />
+					</div>
+					<div class="form-group has-feedback">
+						<input name="data[Lead][email]" id="leadmais-email" type="email" placeholder="Seu E-mail" class="form-control" value="<?php echo ( !empty( $coockie) ) ? $coockie['email'] : '';?>" required />
+					</div>
+					<div class="form-group has-feedback">
+						<input name="data[Lead][phone]" id="leadmais-phone" type="text" placeholder="DDD + Celular ou Fixo" class="form-control telefone" value="<?php echo ( !empty( $coockie) ) ? $coockie['phone'] : '';?>" required />
+					</div>
+					<div class="form-group">
+						<textarea name="data[Attribute][mensagem]" id="leadmais-mensagem" placeholder="Mensagem" rows="2" class="form-control"></textarea>
+					</div>
+					<div class="form-group">
+						<button class="btn btn-success btn-lg btn-block" id="leadmais-submit">Enviar</button>
+					</div>
+				</form>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="agende">
+		<div class="container">
+			<div class="col-lg-8">
+				<p class="hidden-xs">Não perca tempo, agende sua aula experimental e <br> <b>mude de vida com a gente!</b></p>
+			</div>
+			<div class="col-lg-4">
+				<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a>
+			</div>
+		</div>
+	</div>
+
+	<!-- Video -->
+	<div class="fullscreen background parallax" style="background-image:url('img/bg-main2.jpg');" data-img-width="1600" data-img-height="1064">
+		<div id="video-wrap" class="video-wrap">
+			<div class="content-overlay">
+				<div class="container">
+					<header>
+						<div class="container">
+							<div id="menu-btn" class="visible-xs visible-sm pull-right">
+								<a class="btn btn-lg btn-default collapsed" data-toggle="collapse" data-target="#collapseMenu" aria-expanded="false"> 
+									<span class="sr-only">Toggle navigation</span> 
+									<span class="icon-bar"></span> 
+									<span class="icon-bar"></span> 
+									<span class="icon-bar"></span> 
+								</a>
+							</div>
+							<div class="brand col-xs-6 col-sm-6 col-md-6 col-lg-6">
+								<h1 class="header-logo">
+									<a href="#">
+										<img src="img/marca.png" alt="Bunker Crossfit">
+										<span class="sr-only">Bunker Crossfit</span>
+									</a>
+								</h1>
+							</div>
+							<div class="menu-blocked hidden-sm hidden-xs col-sm-6 col-md-6 col-lg-6 pull-right">
+								<nav class="clearfix">
+									<ul class="list-unstyled nav navbar-nav">
+										<li><a data-scroll href="#crossfit">Crossfit</a></li>
+										<li><a data-scroll href="#depoimentos">Depoimentos</a></li>
+										<li><a data-scroll href="#fotos">@bunker_cf</a></li>
+										<li><a data-scroll href="#localizacao">Localização</a></li>
+										<li><a href="javascript:void(0);"><span class="glyphicon glyphicon-earphone"></span> 81 3339-1022</a></li>
+									</ul>
+								</nav>
+							</div>
+						</div>
+					</header>
+					<section class="highlight text-center">
+						<h2>Prepare-se para mudar de vida!</h2>
+						<p>O CrossFit é um programa de treinamento de força e condicionamento físico geral baseado em movimentos funcionais, feitos em alta intensidade e constantemente variados.</p>
+						<div class="clearfix">
+							<div class="passos"><span class="hidden-xs">1º</span> <a href="https://www.youtube.com/watch?v=nbEsaE7tXLs?fs=1&amp;autoplay=1" class="btn video btn-lg btn-default"><i class="glyphicon glyphicon-play-circle"></i> Entenda o Crossfit</a></div>
+							<div class="passos"><span class="hidden-xs">2º</span> <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a></div>
+							<div class="passos hidden-xs"><span class="hidden-xs">3º</span> <a href="#" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-thumbs-up"></i> Mude de Vida</a></div>
+						</div>
+					</section>
+		    	</div>
+			</div>
+			<video preload="metadata" autoplay loop id="my-video" class="hidden-xs">
+				<source src="img/bunker2.mp4" type="video/mp4">
+			</video>
+		</div>
+	</div>
+
+	<!-- Content -->
+	<div class="content">
 		<span id="crossfit"></span>
 		<section class="middle middle-margin crossfit">
 			<div class="container">
@@ -135,9 +154,8 @@
 					<p>O Crossfit foi desenvolvido para melhorar as capacidades fisiológicas de qualquer tipo de pessoa, desde atletas até idosos ou jovens. </p>
 				</div>
 				<div class="clearfix row crossfit-3">
-					<!-- <p>Os treinos do Crossfit são orientados em três principais princípios:</p> -->
 					<div class="col-sm-4 col-md-4 col-lg-4 text-center">
-						<i class="fa fa-bolt" aria-hidden="true"></i>
+						<figure><img src="img/icon-move.png" class="img-responsive"></figure>
 						<b><h3>Movimentos Funcionais</h3></b>
 						<p>São todos aqueles que pode ser aplicado no seu dia-a-dia, como agachar, arremesar, saltar, levantar objetos, dentre outras atividades.</p>
 					</div>
@@ -147,17 +165,19 @@
 						<p>Os treinos são realizados em alta intensidade, porém de forma relativa às condições físicas do praticante.</p>
 					</div>
 					<div class="col-sm-4 col-md-4 col-lg-4 text-center">
-						<i class="fa fa-bolt" aria-hidden="true"></i>
+						<i class="fa fa-refresh" aria-hidden="true"></i>
 						<b><h3>Constantemente Variados</h3></b>
 						<p>Para que o corpo seja sempre estimulado a se adaptar e continuar progredindo independente do tempo de prática.</p>
 					</div>
 				</div>
+				<figure><img src="img/bunker.jpg" class="img-responsive"></figure>
 				<div class="clearfix row crossfit-beneficios">
 					<div class="col-sm-7 col-md-7 col-lg-7">
-						<figure><img src="img/bunker1.jpg" class="img-responsive"></figure>
+						<h3>Entendendo um pouco mais...</h3>
 						<p>O objetivo do <strong>Crossfit</strong> é potencializar todas as principais capacidades físicas do ser humano, como a resistência respiratória e cardiovascular, a resistência muscular, a flexibilidade, força, coordenação, potência, agilidade, equilíbrio e velocidade. </p>
 						<p>Atualmente, os treinos de <strong>Crossfit</strong> são os mais populares em academias de todo o mundo, justamente pela facilidade de adaptação que os exercícios deste programa de treinamento proporcionam para as pessoas de qualquer idade ou nível físico. </p>
 						<p>O principal equipamento para a prática do <strong>Crossfit</strong> é o próprio corpo, mas também podem ser utilizadas algumas ferramentas básicas, como cordas, pesos, caixas, elásticos, correntes, entre outros que auxiliem na execução de alguns exercícios. </p>
+						<figure><img src="img/bunker3.jpg" class="img-responsive"></figure>
 					</div>
 					<div class="col-sm-5 col-md-5 col-lg-5">
 						<h3>Benefícios</h3>
@@ -188,9 +208,6 @@
 				<div class="content-parallax">
 					<h2>Faça parte da família Bunker</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga repellat blanditiis alias voluptatem ullam in optio nam, quas dolores rerum magni.!</p>
-					<div class="text-center">
-						<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -255,15 +272,15 @@
 			</div>
 		</section>
 
-		<div class="not-fullscreen background background-familia parallax" style="background-image:url('img/bg1.jpg');" data-img-width="1600" data-img-height="1064">
+		<div class="not-fullscreen background background-familia parallax" style="background-image:url('img/bg8.jpg');" data-img-width="1600" data-img-height="1064">
 			<div class="container middle-parallax">
 				<div class="content-parallax">
 					<h2>Eventos e Novidades</h2>
 					<p>Lorem ipsum nemo illum debitis harum similique vero inventore enim consequatur, deserunt aspernatur modi exercitationem numquam. Sint!</p>
 					<div class="text-center">
-						<a href="#" class="btn btn-lg btn-default btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</a>
-						<a href="#" class="btn btn-lg btn-default btn-instagram"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a>
-						<a href="#" class="btn btn-lg btn-default btn-youtube"><i class="fa fa-youtube" aria-hidden="true"></i> YouTube</a>
+						<a href="https://www.facebook.com/bunkercf/" target="_blank" class="btn btn-lg btn-default btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> <span class="hidden-xs">Facebook</span></a>
+						<a href="https://instagram.com/bunker_cf/" target="_blank" class="btn btn-lg btn-default btn-instagram"><i class="fa fa-instagram" aria-hidden="true"></i> <span class="hidden-xs">Instagram</span></a>
+						<a href="https://www.youtube.com/channel/UC57oZgESdKYSpcI9igiV_4Q" target="_blank" class="btn btn-lg btn-default btn-youtube"><i class="fa fa-youtube" aria-hidden="true"></i> <span class="hidden-xs">YouTube</span></a>
 					</div>
 				</div>
 			</div>
@@ -273,7 +290,7 @@
 		<section class="middle middle-margin blocos">
 			<div class="container">
 				<div class="title">
-					<h2>Mais da Bunker</h2>
+					<h2>@bunker_cf</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ratione est, optio nobis dolores quidem repellat modi saepe.</p></h2>
 				</div>
 				<div class="clearfix row">
@@ -302,15 +319,12 @@
 						<img src="img/foto1.jpg" class="img-responsive">
 					</div>
 				</div>
-				<div class="text-center">
-					<a href="#" class="btn btn-lg btn-success btn-block" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a>
-				</div>
 			</div>
 		</section>
 
 
 		<span id="localizacao"></span>
-		<div class="not-fullscreen background background-familia parallax" style="background-image:url('img/bg1.jpg');" data-img-width="1600" data-img-height="1064">
+		<div class="not-fullscreen background background-familia parallax" style="background-image:url('img/bg6.jpg');" data-img-width="1600" data-img-height="1064">
 			<div class="container middle-parallax como-chegar">
 				<div class="content-parallax">
 					<h2>Como Chegar?</h2>
@@ -321,28 +335,76 @@
 				</div>
 			</div>
 		</div>
-
-
-		<!--<div class="not-fullscreen background parallax" style="background-image:url('img/bg2.jpg');" data-img-width="1600" data-img-height="1064" data-diff="100" data-oriz-pos="100%">
-			<div class="container middle-parallax">
-				<div class="content-parallax">
-					<h2>Conheça a Bunker Defense</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga repellat blanditiis alias voluptatem ullam in optio nam, quas dolores rerum magni.!</p>
-				</div>
-			</div>
-		</div>-->
-
-		<footer class="footer">
-			<div class="container">
-				© Bunker Equilíbrio Crossfit.
-			</div>
-		</footer> 
-		<!-- </div> -->
+	</div>
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="container">
+			© Bunker Equilíbrio Crossfit.
+		</div>
+	</footer> 
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/smooth-scroll/10.2.1/js/smooth-scroll.min.js"></script>
-	<script src="//code.jquery.com/jquery-3.1.0.slim.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.min.js"></script>
+	<!--<script src="//code.jquery.com/jquery-3.1.0.slim.min.js"></script>-->
 	<script src="http://www.jqueryscript.net/demo/Responsive-Background-Video-Plugin-With-Parallax-Effect-backgroundVideo/backgroundVideo.js"></script>
+
+	<script>
+
+	$(document).ready(function($) {
+		function scrollTop() {
+			return document.body.scrollTop || document.documentElement.scrollTop;
+		}
+
+		window.onscroll = function(){
+			var y_fixo = $(".content").offset().top;
+
+			if(y_fixo - scrollTop() <= 100){
+				$(".agende").addClass("agende-show");
+			}else{
+				$(".agende").removeClass("agende-show");
+			}
+		}
+
+		// var middle_content_width = $('.content').width();
+	
+		// if ( middle_content_width > 767 ) {
+
+		// 	window.onscroll = function(){
+		// 		var y_fixo = $(".content").offset().top;
+
+		// 		if(y_fixo - scrollTop() <= -600){
+		// 			$(".agende").addClass("agende-show");
+		// 		}else{
+		// 			$(".agende").removeClass("agende-show");
+		// 		}
+		// 	}
+		// }
+	});
+
+	$(document).ready(function() {
+
+		$(".video").click(function() {
+			$.fancybox({
+				'padding'		: 0,
+				'autoScale'		: false,
+				'transitionIn'	: 'none',
+				'transitionOut'	: 'none',
+				'title'			: this.title,
+				'href'			: this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+				'type'			: 'swf',
+				'swf'			: {
+				'wmode'				: 'transparent',
+				'allowfullscreen'	: 'true'
+				}
+			});
+
+			return false;
+		});
+	});
+
+	</script>
 	<script>
 
 	/* detect touch */

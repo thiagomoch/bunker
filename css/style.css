@@ -7923,8 +7923,23 @@ header nav ul li a {
   text-transform: uppercase;
 }
 
+header nav ul li a:hover {
+  background: #000 !important;
+  color: #fff;
+}
+
+header nav ul li a:active {
+  background: #000 !important;
+  color: #fff;
+}
+
+header nav ul li:active {
+  background: #000 !important;
+  color: #fff;
+}
+
 #menu-mobile {
-  background: #2267af;
+  background: #000;
 }
 
 #menu-mobile ul {
@@ -7932,7 +7947,7 @@ header nav ul li a {
 }
 
 #menu-mobile ul li {
-  border-bottom: 1px solid #00afee;
+  border-bottom: 1px solid #333;
   padding: 10px 0;
 }
 
@@ -8024,7 +8039,7 @@ header nav ul li a {
   display: inline-block;
   padding-bottom: 30px;
   margin-bottom: 30px;
-  border-bottom: 2px solid #333;
+  border-bottom: 1px solid #444;
   color: #c7d84c !important;
 }
 
@@ -8035,10 +8050,53 @@ header nav ul li a {
   margin: auto;
 }
 
+.agende {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: -100px;
+  background: #111;
+  border-top: 1px solid #333;
+  z-index: 1040;
+  display: block;
+  transition: all .3s linear;
+  -o-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+}
+
+.agende .container {
+  padding-top: 30px;
+}
+
+.agende .container p {
+  font-size: 17px;
+  font-size: 1.7rem;
+}
+
+.agende-show {
+  display: block;
+  bottom: 0;
+}
+
+section.crossfit .crossfit-3 .col-lg-4 {
+  margin-bottom: 40px;
+}
+
 section.crossfit .crossfit-3 i {
   font-size: 50px;
   font-size: 5rem;
   margin-bottom: 10px;
+}
+
+section.crossfit .crossfit-3 figure {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+section.crossfit .crossfit-3 figure img {
+  height: 45px;
+  display: inline-block;
 }
 
 section.crossfit .crossfit-3 h3 {
@@ -8050,7 +8108,7 @@ section.crossfit .crossfit-3 p {
 }
 
 section.crossfit .crossfit-beneficios {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 section.crossfit .crossfit-beneficios h3 {
@@ -8063,7 +8121,8 @@ section.crossfit .crossfit-beneficios p {
 }
 
 section.crossfit .crossfit-beneficios figure {
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 section.crossfit .crossfit-beneficios ul li {
@@ -8136,6 +8195,7 @@ section.blocos .bloco span {
 
 .content-parallax {
   display: table-cell;
+  table-layout: fixed;
   position: relative;
   vertical-align: middle;
   text-align: center;
@@ -8205,6 +8265,17 @@ footer {
   }
   section.crossfit .crossfit-beneficios p {
     margin-right: 0;
+  }
+  .btn {
+    font-size: 15px;
+    font-size: 1.5rem;
+  }
+  .agende {
+    height: 75px;
+  }
+  .agende .container {
+    padding-top: 15px;
+    text-align: center;
   }
 }
 

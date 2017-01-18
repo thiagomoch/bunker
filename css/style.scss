@@ -167,16 +167,28 @@ header{
 					color:#eee;
 					text-transform: uppercase;
 				}
+				a:hover{
+					background:#000 !important;
+					color:#fff;
+				}
+				a:active{
+					background:#000 !important;
+					color:#fff;	
+				}
+			}
+			li:active{
+				background:#000 !important;
+				color:#fff;	
 			}
 		}
 	}
 }
 #menu-mobile{
-	background:$azul;
+	background:#000;
 	ul{
 		margin-bottom: 0;
 		li{
-			border-bottom:1px solid #00afee;
+			border-bottom:1px solid #333;
 			padding:10px 0;
 			a{
 				color:#fff;
@@ -254,7 +266,7 @@ header{
 			display: inline-block;
 			padding-bottom:30px;
 			margin-bottom: 30px;
-			border-bottom:2px solid #333;
+			border-bottom:1px solid #444;
 			color:$verde !important;
 		}
 		p{
@@ -264,12 +276,46 @@ header{
 		}
 	}
 }
-
+.agende{
+	height:100px;
+	width:100%;
+	position:fixed;
+	bottom:-100px;
+	background:#111;
+	border-top:1px solid #333;
+	z-index:1040;
+	display:block;
+	transition: all .3s linear;
+	-o-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+	.container{
+		padding-top:30px;
+		p{
+			@include font-size(1.7);
+		}
+	}
+}
+.agende-show{
+	display:block;
+	bottom:0;
+}
 section.crossfit{
 	.crossfit-3{
+		.col-lg-4{
+			margin-bottom: 40px;
+		}
 		i{
 			@include font-size(5);
 			margin-bottom: 10px;
+		}
+		figure{
+			margin-bottom: 10px;
+			text-align: center;
+			img{
+				height: 45px;
+				display: inline-block;
+			}
 		}
 		h3{
 			margin-bottom: 10px;
@@ -279,7 +325,7 @@ section.crossfit{
 		}
 	}
 	.crossfit-beneficios{
-		margin-top: 60px;
+		margin-top: 40px;
 		h3{
 			margin-bottom: 20px;
 		}
@@ -288,7 +334,8 @@ section.crossfit{
 			line-height: 20px;
 		}
 		figure{
-			margin-bottom:20px;
+			margin-top:30px;
+			margin-bottom:30px;
 		}
 		ul{
 			li{
@@ -350,6 +397,7 @@ section.blocos{
 }
 .content-parallax {
     display:table-cell;
+    table-layout: fixed;
     position:relative;
     vertical-align:middle;
     text-align:center;
@@ -429,6 +477,16 @@ footer{
 			p{
 				margin-right: 0;
 			}
+		}
+	}
+	.btn{
+		@include font-size(1.5);
+	}
+	.agende{
+		height:75px;
+		.container{
+			padding-top:15px;
+			text-align:center;
 		}
 	}
 }
