@@ -365,7 +365,8 @@ section.blocos{
 	}
 }
 .middle-parallax{
-	min-height:450px;
+	// min-height:450px;
+	height:450px;
 	text-align:center;
 	margin-bottom: 60px;
 	display:table;
@@ -374,7 +375,7 @@ section.blocos{
 		display: inline-block;
 		padding-bottom:30px;
 		margin-bottom: 30px;
-		border-bottom:2px solid #333;
+		border-bottom:1px solid #333;
 		color:$verde !important;
 	}
 	p{
@@ -397,7 +398,6 @@ section.blocos{
 }
 .content-parallax {
     display:table-cell;
-    table-layout: fixed;
     position:relative;
     vertical-align:middle;
     text-align:center;

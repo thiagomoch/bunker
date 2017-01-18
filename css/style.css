@@ -8154,7 +8154,7 @@ section.blocos .bloco span {
 }
 
 .middle-parallax {
-  min-height: 450px;
+  height: 450px;
   text-align: center;
   margin-bottom: 60px;
   display: table;
@@ -8166,7 +8166,7 @@ section.blocos .bloco span {
   display: inline-block;
   padding-bottom: 30px;
   margin-bottom: 30px;
-  border-bottom: 2px solid #333;
+  border-bottom: 1px solid #333;
   color: #c7d84c !important;
 }
 
@@ -8195,7 +8195,6 @@ section.blocos .bloco span {
 
 .content-parallax {
   display: table-cell;
-  table-layout: fixed;
   position: relative;
   vertical-align: middle;
   text-align: center;
