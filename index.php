@@ -1,4 +1,116 @@
-<!doctype html>
+<?php
+
+define("URL_SITE", 			"http://" . $_SERVER['HTTP_HOST'] . str_replace("index.php", "", $_SERVER['PHP_SELF']));
+
+// if ( strpos("localhost", $_SERVER["HTTP_HOST"]) !== false ) {
+
+// 	define("URL_SCRIPT_LEADMAIS", 	"//leadmaisteste.com.br/js/leadmais-script.js" );
+// 	define("LEADMAIS_TOKEN", 		"a552c11350622363dd3af302af2fbfb5" );
+// 	define("LEADMAIS_INTERESTING", 	"Crossfit" );
+// 	define("LEADMAIS_PRODUCT", 		"8343d521ef9fef84f1dd96b516980b4b" );
+// 	define("LEADMAIS_SOURCE", 		"19f38749422e9de968c2ecf47637ffab" );
+
+// } else {
+
+	define("URL_SCRIPT_LEADMAIS", 	"//leadmais.com.br/js/leadmais-script.js" );
+	define("LEADMAIS_TOKEN", 		"a552c11350622363dd3af302af2fbfb5" );
+	define("LEADMAIS_INTERESTING", 	"Crossfit" );
+	define("LEADMAIS_PRODUCT", 		"8343d521ef9fef84f1dd96b516980b4b" );
+	define("LEADMAIS_SOURCE", 		"19f38749422e9de968c2ecf47637ffab" );
+// }
+
+/////////// BUSCANDO VIDEOS DO YOUTUBE ///////////////////
+
+$videos = array();
+
+try
+{
+	include('lib/google/autoload.php');
+	include('lib/google/Service/YouTube.php');
+
+	define('USER', 'scripts@fresh-gravity-116813.iam.gserviceaccount.com');
+	define('PASS', 'lib/google/Scripts-01983443d906.p12');
+
+	$credentials = new Google_Auth_AssertionCredentials(
+			USER,
+			array('https://www.googleapis.com/auth/youtube'),
+			file_get_contents(PASS)
+			);
+
+	$client = new Google_Client();
+	$client->setAssertionCredentials($credentials);
+
+	if ($client->getAuth()->isAccessTokenExpired()) {
+		$client->getAuth()->refreshTokenWithAssertion();
+	}
+
+	$arrVideosHome = $arrVideosJogacos = $arrVideosRadio = array();
+	$cVideosHome = $cVideosJogacos = $cVideosRadio = 0;
+
+	$youtube = new Google_Service_Youtube($client);
+
+	$arrPlaylistHome = $youtube->playlistItems->listPlaylistItems('contentDetails,snippet', array('playlistId' =>  'PLZv1XjxSeIRRIzuIJ3l0UoRAwQvgPlUBw', 'maxResults' => 8));
+
+	if ( !empty( $arrPlaylistHome ) ) {
+
+		foreach ($arrPlaylistHome as $video) {
+			
+// 			echo '<pre>';
+// 			var_dump( $video->getSnippet()->getThumbnails() );
+// 			var_dump( $video->getSnippet()->getThumbnails()->getHigh()->url );
+// 			die();
+
+			$dados 				= array();
+			$dados["id"] 		= $video->getContentDetails()->videoId;
+			$dados["titulo"] 	= $video->getSnippet()->description;
+			$dados["imagem"] 	= $video->getSnippet()->getThumbnails()->getMaxres()->url;
+			
+// 			$videos[] = $video->getContentDetails()->videoId;
+			$videos[] = $dados;
+		}
+	}
+
+} catch (Exception $e) {
+// 	echo $e->getMessage();
+// 	DIE();
+}
+
+
+/////////// BUSCANDO IMAGENS DO INSTAGRAM ///////////////////
+
+$access_token = "47904622.e6ee039.47f02047b5134e86aedc23e5657062ea";
+
+$ch 		= curl_init( "https://api.instagram.com/v1/users/self/media/recent/?access_token=" . $access_token );
+curl_setopt( $ch, CURLOPT_HEADER, 0 );
+curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
+$output 	= curl_exec($ch);
+curl_close( $ch );
+
+$retorno = json_decode( $output );
+
+$imagens = array();
+
+// se deu tudo certo na requisição
+if ( !empty( $retorno->meta->code ) && $retorno->meta->code == 200 ) {
+
+	foreach ( $retorno->data as $data ) {
+
+// 		echo '<pre>';
+// 		var_dump( $data );
+// 		die();
+
+		$imagem 						= array();
+		$imagem["link"] 				= $data->link;
+		$imagem["caption"] 				= $data->caption->text;
+		$imagem["low_resolution"] 		= $data->images->low_resolution->url;
+		$imagem["standard_resolution"] 	= $data->images->standard_resolution->url;
+		$imagem["thumbnail"] 			= $data->images->thumbnail->url;
+		$imagens[] 						= $imagem;
+	}
+}
+
+?><!doctype html>
 <!--[if lt IE 7 ]> <html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js oldie ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js oldie ie7 lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js oldie ie8 lt-ie9"> <![endif]-->
@@ -53,10 +165,11 @@
 	      <div class="modal-body">
 	      		<p>Participe de um treino real de Crossfit e entenda melhor como podemos te ajudar. O que está esperando? :)</p>
 				<form action="" role="form" data-toggle="validator" id="leadmais-form">
-					<input type="hidden" name="data[Account][token]" 	value=""  />
-					<input type="hidden" name="data[Lead][interesting]" value="" />
-					<input type="hidden" name="data[Product][token]" 	value=""  />	
-					<input type="hidden" name="data[Source][token]" 	value="" />
+					<input type="hidden" name="data[Account][token]" 	value="<?php echo LEADMAIS_TOKEN;?>"  />
+					<input type="hidden" name="data[Lead][interesting]" value="<?php echo LEADMAIS_INTERESTING?>" />
+					<input type="hidden" name="data[Product][token]" 	value="<?php echo LEADMAIS_PRODUCT;?>"  />	
+					<input type="hidden" name="data[Source][token]" 	value="<?php echo LEADMAIS_SOURCE;?>" />
+					
 
 					<div class="form-group has-feedback">
 						<label for="nome" class="sr-only">Nome</label>
@@ -220,54 +333,29 @@
 					<p>Pessoas comuns, objetivos diversos, evolução, superação e muita saúde. Conheça as histórias inspiradoras dos nossos alunos. Você é o próximo!</p>
 				</div>
 				<div class="clearfix row">
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" src="//www.youtube.com/embed/GV2mDkZ7nQ8?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
-						</div>
-						<p>"<span>Bancário</span> conta como o Crossfit ajuda a exercitar seus membros inferiores."</p>
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" src="//www.youtube.com/embed/GV2mDkZ7nQ8?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
-						</div>
-						<p>"<span>Dentista</span> diz qual foi a sensação de superar os seus desafios."</p>
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" src="//www.youtube.com/embed/GV2mDkZ7nQ8?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
-						</div>
-						<p>"<span>Bancário</span> conta como o Crossfit ajuda a exercitar seus membros inferiores."</p>
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" src="//www.youtube.com/embed/GV2mDkZ7nQ8?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
-						</div>
-						<p>"<span>Dentista</span> diz qual foi a sensação de superar os seus desafios."</p>
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" src="//www.youtube.com/embed/GV2mDkZ7nQ8?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
-						</div>
-						<p>"<span>Bancário</span> conta como o Crossfit ajuda a exercitar seus membros inferiores."</p>
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" src="//www.youtube.com/embed/GV2mDkZ7nQ8?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
-						</div>
-						<p>"<span>Dentista</span> diz qual foi a sensação de superar os seus desafios."</p>
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" src="//www.youtube.com/embed/GV2mDkZ7nQ8?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
-						</div>
-						<p>"<span>Bancário</span> conta como o Crossfit ajuda a exercitar seus membros inferiores."</p>
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<div class="embed-responsive embed-responsive-16by9">
-							<iframe class="embed-responsive-item" src="//www.youtube.com/embed/GV2mDkZ7nQ8?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
-						</div>
-						<p>"<span>Dentista</span> diz qual foi a sensação de superar os seus desafios."</p>
-					</div>
+					<?php
+						if ( !empty( $videos ) ) {
+							
+							foreach ( $videos as $video ) {
+								
+								?>
+								<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
+									<div class="embed-responsive embed-responsive-16by9">
+										<?php
+											/*
+											<iframe class="embed-responsive-item" src="//www.youtube.com/embed/<?php echo $video["id"];?>?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
+											 */
+										?>
+										<a class="video" rel="group" href="https://www.youtube.com/watch?v=<?php echo $video["id"];?>?fs=1&amp;autoplay=1" title="<?php echo $video["titulo"];?>" >
+											<img src="<?php echo $video["imagem"];?>" alt="<?php echo $video["titulo"];?>" title="<?php echo $video["titulo"];?>" class="img-responsive" />
+										</a>
+									</div>
+									<p><?php echo $video["titulo"];?></p>
+								</div>
+								<?php 
+							}
+						}
+					?>
 				</div>
 			</div>
 		</section>
@@ -294,30 +382,19 @@
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ratione est, optio nobis dolores quidem repellat modi saepe.</p></h2>
 				</div>
 				<div class="clearfix row">
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<img src="img/foto1.jpg" class="img-responsive">
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<img src="img/foto1.jpg" class="img-responsive">
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<img src="img/foto1.jpg" class="img-responsive">
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<img src="img/foto1.jpg" class="img-responsive">
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<img src="img/foto1.jpg" class="img-responsive">
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<img src="img/foto1.jpg" class="img-responsive">
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<img src="img/foto1.jpg" class="img-responsive">
-					</div>
-					<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-						<img src="img/foto1.jpg" class="img-responsive">
-					</div>
+					<?php
+						if ( !empty( $imagens ) ) {
+							foreach ( $imagens as $imagem ) {
+								?>
+								<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
+									<a class="fancybox" rel="group" href="<?php echo $imagem["standard_resolution"];?>" title="<?php echo $imagem["caption"];?>" >
+										<img src="<?php echo $imagem["standard_resolution"];?>" alt="<?php echo $imagem["caption"];?>" title="<?php echo $imagem["caption"];?>" class="img-responsive" />
+									</a>
+								</div>
+								<?php 
+							}
+						}
+					?>
 				</div>
 			</div>
 		</section>
@@ -349,8 +426,24 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.min.js"></script>
 	<!--<script src="//code.jquery.com/jquery-3.1.0.slim.min.js"></script>-->
 	<script src="http://www.jqueryscript.net/demo/Responsive-Background-Video-Plugin-With-Parallax-Effect-backgroundVideo/backgroundVideo.js"></script>
-
+	<script type="text/javascript" src="<?php echo URL_SCRIPT_LEADMAIS;?>"></script>
 	<script>
+
+	var leadmais_redirect_url 	= "<?php echo URL_SITE;?>/obrigado.php";
+	var leadmais_text_button 	= "Enviar";
+
+	$( document ).ready(function(){
+			
+		$('#leadmais-form').validator().on('submit', function (e) {
+			
+			$('#leadmais-submit').html('Enviando...');
+			$('#leadmais-submit').attr('disabled', 'disabled');
+			
+			APP_LEADMAIS.add_leadmais();
+			
+			return false;
+		});
+	});
 
 	$(document).ready(function($) {
 		function scrollTop() {
@@ -386,6 +479,7 @@
 	$(document).ready(function() {
 
 		$(".video").click(function() {
+
 			$.fancybox({
 				'padding'		: 0,
 				'autoScale'		: false,
@@ -402,6 +496,9 @@
 
 			return false;
 		});
+
+		$(".fancybox").fancybox();
+		
 	});
 
 	</script>
