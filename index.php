@@ -28,8 +28,8 @@ try
 	include('lib/google/autoload.php');
 	include('lib/google/Service/YouTube.php');
 
-	define('USER', 'scripts@fresh-gravity-116813.iam.gserviceaccount.com');
-	define('PASS', 'lib/google/Scripts-01983443d906.p12');
+	define('USER', '596565644183-compute@developer.gserviceaccount.com');
+	define('PASS', 'Website-a2904275f0e6.p12');
 
 	$credentials = new Google_Auth_AssertionCredentials(
 			USER,
@@ -49,38 +49,32 @@ try
 
 	$youtube = new Google_Service_Youtube($client);
 
-	$arrPlaylistHome = $youtube->playlistItems->listPlaylistItems('contentDetails,snippet', array('playlistId' =>  'PLZv1XjxSeIRRIzuIJ3l0UoRAwQvgPlUBw', 'maxResults' => 8));
+	$arrPlaylistHome = $youtube->playlistItems->listPlaylistItems('contentDetails,snippet', array('playlistId' =>  'PL5oNPFwWHlkN9N669Sa3ewqQpR_nE0E0Q', 'maxResults' => 8));
 
 	if ( !empty( $arrPlaylistHome ) ) {
 
 		foreach ($arrPlaylistHome as $video) {
-			
-// 			echo '<pre>';
-// 			var_dump( $video->getSnippet()->getThumbnails() );
-// 			var_dump( $video->getSnippet()->getThumbnails()->getHigh()->url );
-// 			die();
 
 			$dados 				= array();
 			$dados["id"] 		= $video->getContentDetails()->videoId;
-			$dados["titulo"] 	= $video->getSnippet()->description;
+			$dados["titulo"] 	= $video->getSnippet()->title;
 			$dados["imagem"] 	= $video->getSnippet()->getThumbnails()->getMaxres()->url;
 			
-// 			$videos[] = $video->getContentDetails()->videoId;
 			$videos[] = $dados;
 		}
 	}
 
 } catch (Exception $e) {
-// 	echo $e->getMessage();
-// 	DIE();
+	// echo $e->getMessage();
+	// DIE();
 }
 
 
 /////////// BUSCANDO IMAGENS DO INSTAGRAM ///////////////////
 
-$access_token = "47904622.e6ee039.47f02047b5134e86aedc23e5657062ea";
+$access_token = "2144660815.13ec8ee.5041a4b166e4409e94a5a286ac4a3d08";
 
-$ch 		= curl_init( "https://api.instagram.com/v1/users/self/media/recent/?access_token=" . $access_token );
+$ch 		= curl_init( "https://api.instagram.com/v1/users/2144660815/media/recent/?access_token=" . $access_token );
 curl_setopt( $ch, CURLOPT_HEADER, 0 );
 curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
 curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
