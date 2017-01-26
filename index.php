@@ -49,7 +49,7 @@ try
 
 	$youtube = new Google_Service_Youtube($client);
 
-	$arrPlaylistHome = $youtube->playlistItems->listPlaylistItems('contentDetails,snippet', array('playlistId' =>  'PL5oNPFwWHlkN9N669Sa3ewqQpR_nE0E0Q', 'maxResults' => 8));
+	$arrPlaylistHome = $youtube->playlistItems->listPlaylistItems('contentDetails,snippet', array('playlistId' =>  'PL5oNPFwWHlkNi5n7X19pLH49MefrwEsM9', 'maxResults' => 12));
 
 	if ( !empty( $arrPlaylistHome ) ) {
 
