@@ -1,137 +1,18 @@
-<?php
-
+<?php 
 define("URL_SITE", 			"http://" . $_SERVER['HTTP_HOST'] . str_replace("index.php", "", $_SERVER['PHP_SELF']));
 
-// if ( strpos("localhost", $_SERVER["HTTP_HOST"]) !== false ) {
-
-// 	define("URL_SCRIPT_LEADMAIS", 	"//leadmaisteste.com.br/js/leadmais-script.js" );
-// 	define("LEADMAIS_TOKEN", 		"a552c11350622363dd3af302af2fbfb5" );
-// 	define("LEADMAIS_INTERESTING", 	"Crossfit" );
-// 	define("LEADMAIS_PRODUCT", 		"8343d521ef9fef84f1dd96b516980b4b" );
-// 	define("LEADMAIS_SOURCE", 		"19f38749422e9de968c2ecf47637ffab" );
-
-// } else {
-
-	define("URL_SCRIPT_LEADMAIS", 	"//leadmais.com.br/js/leadmais-script.js" );
-	define("LEADMAIS_TOKEN", 		"a552c11350622363dd3af302af2fbfb5" );
-	define("LEADMAIS_INTERESTING", 	"Crossfit" );
-	define("LEADMAIS_PRODUCT", 		"8343d521ef9fef84f1dd96b516980b4b" );
-	define("LEADMAIS_SOURCE", 		"19f38749422e9de968c2ecf47637ffab" );
-// }
-
-/////////// BUSCANDO VIDEOS DO YOUTUBE ///////////////////
-
-$videos = array();
-
-try
-{
-	include('lib/google/autoload.php');
-	include('lib/google/Service/YouTube.php');
-
-	define('USER', '596565644183-compute@developer.gserviceaccount.com');
-	define('PASS', 'Website-a2904275f0e6.p12');
-
-	$credentials = new Google_Auth_AssertionCredentials(
-			USER,
-			array('https://www.googleapis.com/auth/youtube'),
-			file_get_contents(PASS)
-			);
-
-	$client = new Google_Client();
-	$client->setAssertionCredentials($credentials);
-
-	if ($client->getAuth()->isAccessTokenExpired()) {
-		$client->getAuth()->refreshTokenWithAssertion();
-	}
-
-	$arrVideosHome = $arrVideosJogacos = $arrVideosRadio = array();
-	$cVideosHome = $cVideosJogacos = $cVideosRadio = 0;
-
-	$youtube = new Google_Service_Youtube($client);
-
-	$arrPlaylistHome = $youtube->playlistItems->listPlaylistItems('contentDetails,snippet', array('playlistId' =>  'PL5oNPFwWHlkNi5n7X19pLH49MefrwEsM9', 'maxResults' => 12));
-
-	if ( !empty( $arrPlaylistHome ) ) {
-
-		foreach ($arrPlaylistHome as $video) {
-
-			$dados 				= array();
-			$dados["id"] 		= $video->getContentDetails()->videoId;
-			$dados["titulo"] 	= $video->getSnippet()->title;
-			$dados["imagem"] 	= $video->getSnippet()->getThumbnails()->getMaxres()->url;
-			
-			$videos[] = $dados;
-		}
-	}
-
-} catch (Exception $e) {
-	// echo $e->getMessage();
-	// DIE();
-}
-
-
-/////////// BUSCANDO IMAGENS DO INSTAGRAM ///////////////////
-
-$access_token = "2144660815.13ec8ee.5041a4b166e4409e94a5a286ac4a3d08";
-
-$ch 		= curl_init( "https://api.instagram.com/v1/users/2144660815/media/recent/?access_token=" . $access_token );
-curl_setopt( $ch, CURLOPT_HEADER, 0 );
-curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
-curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, true );
-$output 	= curl_exec($ch);
-curl_close( $ch );
-
-$retorno = json_decode( $output );
-
-$imagens = array();
-
-// se deu tudo certo na requisição
-if ( !empty( $retorno->meta->code ) && $retorno->meta->code == 200 ) {
-
-	foreach ( $retorno->data as $data ) {
-
-// 		echo '<pre>';
-// 		var_dump( $data );
-// 		die();
-
-		$imagem 						= array();
-		$imagem["link"] 				= $data->link;
-		$imagem["caption"] 				= $data->caption->text;
-		$imagem["low_resolution"] 		= $data->images->low_resolution->url;
-		$imagem["standard_resolution"] 	= $data->images->standard_resolution->url;
-		$imagem["thumbnail"] 			= $data->images->thumbnail->url;
-		$imagens[] 						= $imagem;
-	}
-}
-
-?><!doctype html>
+include('inc/head.php'); 
+?>
+<!doctype html>
 <!--[if lt IE 7 ]> <html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js oldie ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7 ]>    <html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js oldie ie7 lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8 ]>    <html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js oldie ie8 lt-ie9"> <![endif]-->
 <!--[if IE 9 ]>    <html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--><html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js" ><!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
-	<title>Bunker Crossfit</title>
-    <meta name="description" content="" />
-    <meta name="robots" content="index,follow" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700|Roboto:400,700" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" /> -->
-    <!-- <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" /> -->
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/style.css?<?php echo rand(); ?>" />
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <!-- <meta property="og:url" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:title" content="" />
-    <meta property="og:image" content="" /> -->
+	<?php include('inc/head2.php'); ?>
 </head>
 <body id="" class="">
-
 	<!-- Menu Mobile -->
 	<div id="menu-mobile" class="visible-xs visible-sm">
 		<div class="container">
@@ -215,7 +96,7 @@ if ( !empty( $retorno->meta->code ) && $retorno->meta->code == 200 ) {
 							</div>
 							<div class="brand col-xs-6 col-sm-6 col-md-6 col-lg-6">
 								<h1 class="header-logo">
-									<a href="#">
+									<a href="http://www.bunkercf.com.br">
 										<img src="img/marca.png" alt="Bunker Crossfit">
 										<span class="sr-only">Bunker Crossfit</span>
 									</a>
@@ -253,8 +134,7 @@ if ( !empty( $retorno->meta->code ) && $retorno->meta->code == 200 ) {
 
 	<!-- Content -->
 	<div class="content">
-		<span id="crossfit"></span>
-		<section class="middle middle-margin crossfit">
+		<section class="middle middle-margin crossfit" id="crossfit">
 			<div class="container">
 				<div class="title">
 					<h2>Sobre o Crossfit</h2>
@@ -340,7 +220,7 @@ if ( !empty( $retorno->meta->code ) && $retorno->meta->code == 200 ) {
 											<iframe class="embed-responsive-item" src="//www.youtube.com/embed/<?php echo $video["id"];?>?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
 											 */
 										?>
-										<a class="video" rel="group" href="https://www.youtube.com/watch?v=<?php echo $video["id"];?>?fs=1&amp;autoplay=1" title="<?php echo $video["titulo"];?>" >
+										<a class="video" rel="group" href="https://www.youtube.com/watch?v=<?php echo $video["id"];?>?fs=1&amp;autoplay=1" >
 											<img src="<?php echo $video["imagem"];?>" alt="<?php echo $video["titulo"];?>" title="<?php echo $video["titulo"];?>" class="img-responsive" />
 										</a>
 									</div>
@@ -360,9 +240,13 @@ if ( !empty( $retorno->meta->code ) && $retorno->meta->code == 200 ) {
 					<h2>Eventos e Novidades</h2>
 					<p>Lorem ipsum nemo illum debitis harum similique vero inventore enim consequatur, deserunt aspernatur modi exercitationem numquam. Sint!</p>
 					<div class="text-center">
-						<a href="https://www.facebook.com/bunkercf/" target="_blank" class="btn btn-lg btn-default btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> <span class="hidden-xs">Facebook</span></a>
+						<!-- <a href="https://www.facebook.com/bunkercf/" target="_blank" class="btn btn-lg btn-default btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> <span class="hidden-xs">Facebook</span></a>
 						<a href="https://instagram.com/bunker_cf/" target="_blank" class="btn btn-lg btn-default btn-instagram"><i class="fa fa-instagram" aria-hidden="true"></i> <span class="hidden-xs">Instagram</span></a>
-						<a href="https://www.youtube.com/channel/UC57oZgESdKYSpcI9igiV_4Q" target="_blank" class="btn btn-lg btn-default btn-youtube"><i class="fa fa-youtube" aria-hidden="true"></i> <span class="hidden-xs">YouTube</span></a>
+						<a href="https://www.youtube.com/channel/UC57oZgESdKYSpcI9igiV_4Q" target="_blank" class="btn btn-lg btn-default btn-youtube"><i class="fa fa-youtube" aria-hidden="true"></i> <span class="hidden-xs">YouTube</span></a> -->
+						<!-- <div class="g-ytsubscribe" data-channel="GoogleDevelopers" data-layout="default" data-count="default"></div> -->
+						<div class="g-ytsubscribe" data-channelid="UC57oZgESdKYSpcI9igiV_4Q" data-layout="default" data-count="default"></div>
+						<br>
+						<div class="fb-like" data-href="https://www.facebook.com/bunkercf/?fref=ts" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
 					</div>
 				</div>
 			</div>
@@ -381,8 +265,8 @@ if ( !empty( $retorno->meta->code ) && $retorno->meta->code == 200 ) {
 							foreach ( $imagens as $imagem ) {
 								?>
 								<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-									<a class="fancybox" rel="group" href="<?php echo $imagem["standard_resolution"];?>" title="<?php echo $imagem["caption"];?>" >
-										<img src="<?php echo $imagem["standard_resolution"];?>" alt="<?php echo $imagem["caption"];?>" title="<?php echo $imagem["caption"];?>" class="img-responsive" />
+									<a class="fancybox" rel="group" href="<?php echo $imagem["standard_resolution"];?>" >
+										<img src="<?php echo $imagem["standard_resolution"];?>" title="<?php echo $imagem["caption"];?>" class="img-responsive" />
 									</a>
 								</div>
 								<?php 
@@ -407,204 +291,6 @@ if ( !empty( $retorno->meta->code ) && $retorno->meta->code == 200 ) {
 			</div>
 		</div>
 	</div>
-	<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			© Bunker Equilíbrio Crossfit.
-		</div>
-	</footer> 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/smooth-scroll/10.2.1/js/smooth-scroll.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.min.js"></script>
-	<!--<script src="//code.jquery.com/jquery-3.1.0.slim.min.js"></script>-->
-	<script src="http://www.jqueryscript.net/demo/Responsive-Background-Video-Plugin-With-Parallax-Effect-backgroundVideo/backgroundVideo.js"></script>
-	<script type="text/javascript" src="<?php echo URL_SCRIPT_LEADMAIS;?>"></script>
-	<script>
-
-	var leadmais_redirect_url 	= "<?php echo URL_SITE;?>/obrigado.php";
-	var leadmais_text_button 	= "Enviar";
-
-	$( document ).ready(function(){
-			
-		$('#leadmais-form').validator().on('submit', function (e) {
-			
-			$('#leadmais-submit').html('Enviando...');
-			$('#leadmais-submit').attr('disabled', 'disabled');
-			
-			APP_LEADMAIS.add_leadmais();
-			
-			return false;
-		});
-	});
-
-	$(document).ready(function($) {
-		function scrollTop() {
-			return document.body.scrollTop || document.documentElement.scrollTop;
-		}
-
-		window.onscroll = function(){
-			var y_fixo = $(".content").offset().top;
-
-			if(y_fixo - scrollTop() <= 100){
-				$(".agende").addClass("agende-show");
-			}else{
-				$(".agende").removeClass("agende-show");
-			}
-		}
-
-		// var middle_content_width = $('.content').width();
-	
-		// if ( middle_content_width > 767 ) {
-
-		// 	window.onscroll = function(){
-		// 		var y_fixo = $(".content").offset().top;
-
-		// 		if(y_fixo - scrollTop() <= -600){
-		// 			$(".agende").addClass("agende-show");
-		// 		}else{
-		// 			$(".agende").removeClass("agende-show");
-		// 		}
-		// 	}
-		// }
-	});
-
-	$(document).ready(function() {
-
-		$(".video").click(function() {
-
-			$.fancybox({
-				'padding'		: 0,
-				'autoScale'		: false,
-				'transitionIn'	: 'none',
-				'transitionOut'	: 'none',
-				'title'			: this.title,
-				'href'			: this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
-				'type'			: 'swf',
-				'swf'			: {
-				'wmode'				: 'transparent',
-				'allowfullscreen'	: 'true'
-				}
-			});
-
-			return false;
-		});
-
-		$(".fancybox").fancybox();
-		
-	});
-
-	</script>
-	<script>
-
-	/* detect touch */
-	if("ontouchstart" in window){
-	    document.documentElement.className = document.documentElement.className + " touch";
-	}
-	if(!$("html").hasClass("touch")){
-	    /* background fix */
-	    $(".parallax").css("background-attachment", "fixed");
-	}
-
-	/* fix vertical when not overflow
-	call fullscreenFix() if .fullscreen content changes */
-	function fullscreenFix(){
-	    var h = $('body').height();
-	    // set .fullscreen height
-	    $(".content-b").each(function(i){
-	        if($(this).innerHeight() > h){ $(this).closest(".fullscreen").addClass("overflow");
-	        }
-	    });
-	}
-	$(window).resize(fullscreenFix);
-	fullscreenFix();
-
-	/* resize background images */
-	function backgroundResize(){
-	    var windowH = $(window).height();
-	    $(".background").each(function(i){
-	        var path = $(this);
-	        // variables
-	        var contW = path.width();
-	        var contH = path.height();
-	        var imgW = path.attr("data-img-width");
-	        var imgH = path.attr("data-img-height");
-	        var ratio = imgW / imgH;
-	        // overflowing difference
-	        var diff = parseFloat(path.attr("data-diff"));
-	        diff = diff ? diff : 0;
-	        // remaining height to have fullscreen image only on parallax
-	        var remainingH = 0;
-	        if(path.hasClass("parallax") && !$("html").hasClass("touch")){
-	            var maxH = contH > windowH ? contH : windowH;
-	            remainingH = windowH - contH;
-	        }
-	        // set img values depending on cont
-	        imgH = contH + remainingH + diff;
-	        imgW = imgH * ratio;
-	        // fix when too large
-	        if(contW > imgW){
-	            imgW = contW;
-	            imgH = imgW / ratio;
-	        }
-	        //
-	        path.data("resized-imgW", imgW);
-	        path.data("resized-imgH", imgH);
-	        path.css("background-size", imgW + "px " + imgH + "px");
-	    });
-	}
-	$(window).resize(backgroundResize);
-	$(window).focus(backgroundResize);
-	backgroundResize();
-
-	/* set parallax background-position */
-	function parallaxPosition(e){
-	    var heightWindow = $(window).height();
-	    var topWindow = $(window).scrollTop();
-	    var bottomWindow = topWindow + heightWindow;
-	    var currentWindow = (topWindow + bottomWindow) / 2;
-	    $(".parallax").each(function(i){
-	        var path = $(this);
-	        var height = path.height();
-	        var top = path.offset().top;
-	        var bottom = top + height;
-	        // only when in range
-	        if(bottomWindow > top && topWindow < bottom){
-	            var imgW = path.data("resized-imgW");
-	            var imgH = path.data("resized-imgH");
-	            // min when image touch top of window
-	            var min = 0;
-	            // max when image touch bottom of window
-	            var max = - imgH + heightWindow;
-	            // overflow changes parallax
-	            var overflowH = height < heightWindow ? imgH - height : imgH - heightWindow; // fix height on overflow
-	            top = top - overflowH;
-	            bottom = bottom + overflowH;
-	            // value with linear interpolation
-	            var value = min + (max - min) * (currentWindow - top) / (bottom - top);
-	            // set background-position
-	            var orizontalPosition = path.attr("data-oriz-pos");
-	            orizontalPosition = orizontalPosition ? orizontalPosition : "50%";
-	            $(this).css("background-position", orizontalPosition + " " + value + "px");
-	        }
-	    });
-	}
-	if(!$("html").hasClass("touch")){
-	    $(window).resize(parallaxPosition);
-	    //$(window).focus(parallaxPosition);
-	    $(window).scroll(parallaxPosition);
-	    parallaxPosition();
-	}
-	
-	var middle_content_width = $('.middle').width();
-	if ( middle_content_width > 767 ) {
-		$('#my-video').backgroundVideo({
-			minimumVideoWidth: 768,
-		});
-	};
-
-	smoothScroll.init();
-	</script>
+	<?php include('inc/footer.php'); ?>
 </body>
 </html>
