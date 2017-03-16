@@ -1,6 +1,10 @@
 <?php
 
 
+// error_reporting(E_STRICT);
+// error_reporting(E_ALL);
+// ini_set("display_errors", 1);
+
 // if ( strpos("localhost", $_SERVER["HTTP_HOST"]) !== false ) {
 
 // 	define("URL_SCRIPT_LEADMAIS", 	"//leadmaisteste.com.br/js/leadmais-script.js" );
