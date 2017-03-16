@@ -71,7 +71,8 @@ try
 
 /////////// BUSCANDO IMAGENS DO INSTAGRAM ///////////////////
 
-$access_token = "2144660815.13ec8ee.5041a4b166e4409e94a5a286ac4a3d08";
+// $access_token = "2144660815.13ec8ee.5041a4b166e4409e94a5a286ac4a3d08";
+$access_token = "2144660815.13ec8ee.38ae14ea7a624a5897e675da1565e939";
 
 $ch 		= curl_init( "https://api.instagram.com/v1/users/2144660815/media/recent/?access_token=" . $access_token );
 curl_setopt( $ch, CURLOPT_HEADER, 0 );
