@@ -216,7 +216,7 @@ header{
 	}
 }
 .highlight{
-	margin-top:240px;
+	margin-top:230px;
 	p{
 		@include font-size(1.7);
 		max-width:800px;
@@ -249,7 +249,7 @@ header{
 	}
 }
 .highlight-obrigado{
-	margin-top:100px;
+	margin-top:50px;
 }
 
 /*
@@ -453,10 +453,14 @@ footer{
 }
 // MD
 @media only screen and (max-width : 1200px) {
+	.highlight{
+		margin-top:120px !important;		
+	}
 	
 }
 // SM
 @media only screen and (max-width : 992px) {
+
 	
 }
 // XS

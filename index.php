@@ -1,7 +1,7 @@
 <?php 
 define("URL_SITE", 			"http://" . $_SERVER['HTTP_HOST'] . str_replace("index.php", "", $_SERVER['PHP_SELF']));
 
-include('inc/head.php'); 
+//include('inc/head.php'); 
 ?>
 <!doctype html>
 <!--[if lt IE 7 ]> <html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js oldie ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -109,19 +109,21 @@ include('inc/head.php');
 										<li><a data-scroll href="#depoimentos">Depoimentos</a></li>
 										<li><a data-scroll href="#fotos">@bunker_cf</a></li>
 										<li><a data-scroll href="#localizacao">Localização</a></li>
-										<li><a href="javascript:void(0);"><span class="glyphicon glyphicon-earphone"></span> 81 3339-1022</a></li>
+										<li class="hidden-md"><a href="javascript:void(0);"><span class="glyphicon glyphicon-earphone"></span> 81 3339-1022</a></li>
 									</ul>
 								</nav>
 							</div>
 						</div>
 					</header>
 					<section class="highlight text-center">
+						<div class="teste">
 						<h2>Prepare-se para mudar de vida!</h2>
-						<p>O CrossFit é um programa de treinamento de força e condicionamento físico geral baseado em movimentos funcionais, feitos em alta intensidade e constantemente variados.</p>
-						<div class="clearfix">
-							<div class="passos"><span class="hidden-xs">1º</span> <a href="https://www.youtube.com/watch?v=nbEsaE7tXLs?fs=1&amp;autoplay=1" class="btn video btn-lg btn-default"><i class="glyphicon glyphicon-play-circle"></i> Entenda o Crossfit</a></div>
-							<div class="passos"><span class="hidden-xs">2º</span> <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a></div>
-							<div class="passos hidden-xs"><span class="hidden-xs">3º</span> <a href="#" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-thumbs-up"></i> Mude de Vida</a></div>
+							<p>O CrossFit é um programa de treinamento de força e condicionamento físico geral baseado em movimentos funcionais, feitos em alta intensidade e constantemente variados.</p>
+							<div class="clearfix">
+								<div class="passos"><span class="hidden-xs">1º</span> <a href="https://www.youtube.com/watch?v=BUNVLyOSeRg?fs=1&amp;autoplay=1" class="btn video btn-lg btn-default"><i class="glyphicon glyphicon-play-circle"></i> Entenda o Crossfit</a></div>
+								<div class="passos"><span class="hidden-xs">2º</span> <a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a></div>
+								<div class="passos hidden-xs"><span class="hidden-xs">3º</span> <a data-scroll href="#depoimentos" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-thumbs-up"></i> Mude de Vida</a></div>
+							</div>
 						</div>
 					</section>
 		    	</div>

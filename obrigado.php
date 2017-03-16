@@ -23,7 +23,7 @@ define("URL_SITE", 			"http://" . $_SERVER['HTTP_HOST'] . str_replace("index.php
 							<div class="brand text-center">
 								<h1 class="header-logo">
 									<a href="http://www.bunkercf.com.br">
-										<img src="img/marca.png" alt="Bunker Crossfit">
+										<img src="img/marca.png" height="30" alt="Bunker Crossfit">
 										<span class="sr-only">Bunker Crossfit</span>
 									</a>
 								</h1>
@@ -31,12 +31,12 @@ define("URL_SITE", 			"http://" . $_SERVER['HTTP_HOST'] . str_replace("index.php
 						</div>
 					</header>
 					<section class="highlight highlight-obrigado text-center">
-						<h2>Agora sim!</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dolorum officia obcaecati qui pariatur illo ullam sapiente.</p>
+						<h2>Parabéns!</h2>
+						<p>Estamos muito felizes que você deu o primeiro passo para a mudança, em breve entraremos em contato para marcar o melhorar horário da sua aula experimental.</p>
 						<div class="col-lg-2"></div>
 						<div class="col-lg-8">
 							<div class="embed-responsive embed-responsive-16by9">
-							  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/nbEsaE7tXLs?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=0"></iframe>
+							  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/Iq_BmYcCQtw?rel=0&amp;showinfo=0&amp;autoplay=1&amp;controls=0"></iframe>
 							</div>
 						</div>
 						<div class="col-lg-2"></div>
