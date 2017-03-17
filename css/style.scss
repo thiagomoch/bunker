@@ -388,7 +388,10 @@ section.blocos{
 	}
 }
 .como-chegar{
-	margin-bottom:20px;
+	margin-bottom:80px;
+	a.tel{
+		color:#fff;
+	}
 }
 .background-familia{
 	min-height:450px;
@@ -452,9 +455,10 @@ footer{
 
 }
 // MD
-@media only screen and (max-width : 1200px) {
+// @media only screen and (max-width : 1200px) {
+@media only screen and (max-width : 1366px) {
 	.highlight{
-		margin-top:120px !important;		
+		margin-top:140px;
 	}
 	
 }

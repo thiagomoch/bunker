@@ -1,7 +1,7 @@
 <?php 
 define("URL_SITE", 			"http://" . $_SERVER['HTTP_HOST'] . str_replace("index.php", "", $_SERVER['PHP_SELF']));
 
-include('inc/head.php'); 
+//include('inc/head.php'); 
 ?>
 <!doctype html>
 <!--[if lt IE 7 ]> <html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js oldie ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -13,6 +13,15 @@ include('inc/head.php');
 	<?php include('inc/head2.php'); ?>
 </head>
 <body id="" class="">
+	<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WG5NKBR"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WG5NKBR');</script>
+<!-- End Google Tag Manager -->
 	<!-- Menu Mobile -->
 	<div id="menu-mobile" class="visible-xs visible-sm">
 		<div class="container">
@@ -129,7 +138,7 @@ include('inc/head.php');
 		    	</div>
 			</div>
 			<video preload="metadata" autoplay loop id="my-video" class="hidden-xs">
-				<source src="img/bunker2.mp4" type="video/mp4">
+				<source src="img/background.mp4" type="video/mp4">
 			</video>
 		</div>
 	</div>
@@ -196,7 +205,7 @@ include('inc/head.php');
 			<div class="container middle-parallax">
 				<div class="content-parallax">
 					<h2>Faça parte da família Bunker</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum fuga repellat blanditiis alias voluptatem ullam in optio nam, quas dolores rerum magni.!</p>
+					<p>Agende sua aula experimental e vivencie um treino real de Crossfit. O que está esperando?</p>
 				</div>
 			</div>
 		</div>
@@ -240,7 +249,7 @@ include('inc/head.php');
 			<div class="container middle-parallax">
 				<div class="content-parallax">
 					<h2>Eventos e Novidades</h2>
-					<p>Lorem ipsum nemo illum debitis harum similique vero inventore enim consequatur, deserunt aspernatur modi exercitationem numquam. Sint!</p>
+					<p>Fique por dentro das novidades da Bunker através das redes sociais.</p>
 					<div class="text-center">
 						<!-- <a href="https://www.facebook.com/bunkercf/" target="_blank" class="btn btn-lg btn-default btn-facebook"><i class="fa fa-facebook" aria-hidden="true"></i> <span class="hidden-xs">Facebook</span></a>
 						<a href="https://instagram.com/bunker_cf/" target="_blank" class="btn btn-lg btn-default btn-instagram"><i class="fa fa-instagram" aria-hidden="true"></i> <span class="hidden-xs">Instagram</span></a>
@@ -259,7 +268,7 @@ include('inc/head.php');
 			<div class="container">
 				<div class="title">
 					<h2>@bunker_cf</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ratione est, optio nobis dolores quidem repellat modi saepe.</p></h2>
+					<p>Acompanhe a bunker no Instagram!</p></h2>
 				</div>
 				<div class="clearfix row">
 					<?php
@@ -285,9 +294,9 @@ include('inc/head.php');
 			<div class="container middle-parallax como-chegar">
 				<div class="content-parallax">
 					<h2>Como Chegar?</h2>
-					<p>A Bunker está localizada na R. José da Silva Lucena, 515 - Boa Viagem - Recife/PE. <br> <i class="fa fa-phone" aria-hidden="true"></i> 81 3339-3333</p>
+					<p>A Bunker está localizada na R. José da Silva Lucena, 515 - Boa Viagem - Recife/PE. <br> <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:8133393333">81 3339-3333</a></p>
 					<div class="text-center">
-						<a href="#" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-map-marker"></i> Acessar Mapa</a>
+						<a href="https://goo.gl/maps/xhXkBovzx1r" target="_blank" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-map-marker"></i> Acessar Mapa</a>
 					</div>
 				</div>
 			</div>

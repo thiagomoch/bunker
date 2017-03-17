@@ -1,5 +1,5 @@
 <meta charset="utf-8" />
-	<title>Bunker Crossfit</title>
+	<title>Bunker - Equilíbrio Crossfit</title>
 	<meta name="description" content="" />
 	<meta name="robots" content="index,follow" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -12,7 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css?<?php echo rand(); ?>" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-	<!-- <meta property="og:url" content="" />
-	<meta property="og:description" content="" />
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" /> -->
+	<!-- <meta property="og:description" content="" /> -->
+	<link href="../img/favicon.ico" type="image/x-icon" rel="shortcut icon" />
+	<meta property="og:title" content="Bunker - Equilíbrio Crossfit" />
+	<meta property="og:url" content="http://www.bunkercf.com.br/" />
+	<meta property="og:image" content="http://www.bunkercf.com.br/img/img-capa.jpg" />
