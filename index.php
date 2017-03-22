@@ -118,7 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 										<li><a data-scroll href="#depoimentos">Depoimentos</a></li>
 										<li><a data-scroll href="#fotos">@bunker_cf</a></li>
 										<li><a data-scroll href="#localizacao">Localização</a></li>
-										<li class="hidden-md"><a href="javascript:void(0);"><span class="glyphicon glyphicon-earphone"></span> 81 3339-1022</a></li>
+										<li class="hidden-md"><a href="javascript:void(0);"><span class="glyphicon glyphicon-earphone"></span> 81 3040-6063</a></li>
 									</ul>
 								</nav>
 							</div>
