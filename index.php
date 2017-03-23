@@ -79,10 +79,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	<div class="agende">
 		<div class="container">
-			<div class="col-lg-8">
+			<div class="col-sm-7 col-md-7 col-lg-8">
 				<p class="hidden-xs">Não perca tempo, agende sua aula experimental e <br> <b>mude de vida com a gente!</b></p>
 			</div>
-			<div class="col-lg-4">
+			<div class="col-sm-5 col-md-5 col-lg-4">
 				<a href="#" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-calendar"></i> Agende sua Aula Experimental</a>
 			</div>
 		</div>
@@ -294,7 +294,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			<div class="container middle-parallax como-chegar">
 				<div class="content-parallax">
 					<h2>Como Chegar?</h2>
-					<p>A Bunker está localizada na R. José da Silva Lucena, 515 - Boa Viagem - Recife/PE. <br> <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:8133393333">81 3339-3333</a></p>
+					<p>A Bunker está localizada na R. José da Silva Lucena, 515 - Boa Viagem - Recife/PE. <br> <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:8133393333">81 3040-6063</a></p>
 					<div class="text-center">
 						<a href="https://goo.gl/maps/xhXkBovzx1r" target="_blank" class="btn btn-lg btn-default"><i class="glyphicon glyphicon-map-marker"></i> Acessar Mapa</a>
 					</div>
