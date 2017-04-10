@@ -256,6 +256,14 @@ header{
 	MIDDLE
 */
 
+.table{
+	thead{
+		tr{
+			background:$verde;
+			color:#000;
+		}
+	}
+}
 .middle-margin{
 	padding:60px 0;
 }
@@ -501,8 +509,11 @@ footer{
 		}
 	}
 }
-// @media only screen and (max-width : 480px) {
-// }
+@media only screen and (max-width : 480px) {
+	.table-responsive{
+		border:none;
+	}
+}
 
 /*  Bootstrap Clearfix */
 

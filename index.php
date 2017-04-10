@@ -301,6 +301,284 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 				</div>
 			</div>
 		</div>
+
+
+		<span id="fotos"></span>
+		<section class="middle middle-margin blocos">
+			<div class="container">
+				<div class="title">
+					<h2>Grade de Horários</h2>
+					<!-- <p>Acompanhe a bunker no Instagram!</p></h2> -->
+				</div>
+				<div class="clearfix row">
+					<div class="table-responsive col-lg-12">
+						<h3>Bunker Games</h3>
+						<br>
+			            <table class="table table-curved ">
+			              <thead class="thead-inverse">
+			                <tr>
+			                  <th>Horário</th>
+			                  <th>Segunda</th>
+			                  <th>Terça</th>
+			                  <th>Quarta</th>
+			                  <th>Quinta</th>
+			                  <th>Sexta</th>
+			                  <th>Sábado</th>
+			                </tr>
+			              </thead>
+			              <tbody>
+			                <tr>
+			                  <td>6:00</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>7:00</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>8:00</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>9:00</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>Team Bunker</td>
+			                </tr>
+			                <tr>
+			                  <td>10:00</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>Team Bunker</td>
+			                </tr>
+			                <tr>
+			                  <td>11:00</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>Team Bunker</td>
+			                </tr>
+			                <tr>
+			                  <td>12:30</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>16:30</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>17:30</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>18:30</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>19:30</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>20:30</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			              </tbody>
+			            </table>
+		            </div>
+		          	<div class="table-responsive col-lg-12">
+			            <br>
+						<h3>Bunker Force</h3>
+						<br>
+			          	<table class="table table-curved">
+			              <thead class="thead-inverse">
+			                <tr>
+			                  <th>Horário</th>
+			                  <th>Segunda</th>
+			                  <th>Terça</th>
+			                  <th>Quarta</th>
+			                  <th>Quinta</th>
+			                  <th>Sexta</th>
+			                  <th>Sábado</th>
+			                </tr>
+			              </thead>
+			              <tbody>
+			                <tr>
+			                  <td>6:00</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>7:00</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>8:00</td>
+			                  <td>---</td>
+			                  <td>LPO - Class</td>
+			                  <td>Endurance - Class</td>
+			                  <td>Gymnastics - Class</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>9:00</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>Team Bunker</td>
+			                </tr>
+			                <tr>
+			                  <td>10:00</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>Team Bunker</td>
+			                </tr>
+			                <tr>
+			                  <td>11:00</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>Team Bunker</td>
+			                </tr>
+			                <tr>
+			                  <td>12:00</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>16:00</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>17:00</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>18:00</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>19:00</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>CrossFit</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>20:00</td>
+			                  <td>CrossFit / Competiton</td>
+			                  <td>LPO Class/ Competiton</td>
+			                  <td>Endurance Class / Competiton</td>
+			                  <td>Gymnastics Class / Competiton</td>
+			                  <td>CrossFit / Competiton</td>
+			                  <td>---</td>
+			                </tr>
+			                <tr>
+			                  <td>21:00</td>
+			                  <td>CrossFit / Competiton</td>
+			                  <td>LPO Class/ Competiton</td>
+			                  <td>Endurance Class / Competiton</td>
+			                  <td>Gymnastics Class / Competiton</td>
+			                  <td>CrossFit / Competiton</td>
+			                  <td>---</td>
+			                </tr>
+			              </tbody>
+			            </table>
+			            <br><br><br><br>
+		          	</div>
+				</div>
+			</div>
+		</section>
 	</div>
 	<?php include('inc/footer.php'); ?>
 </body>
