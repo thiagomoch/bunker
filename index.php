@@ -1,7 +1,7 @@
 <?php 
 define("URL_SITE", 			"http://" . $_SERVER['HTTP_HOST'] . str_replace("index.php", "", $_SERVER['PHP_SELF']));
 
-//include('inc/head.php'); 
+include('inc/head.php'); 
 ?>
 <!doctype html>
 <!--[if lt IE 7 ]> <html lang="pt-BR" xmlns:fb="http://ogp.me/ns/fb#" class="no-js oldie ie6 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -30,7 +30,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 					<ul class="list-unstyled text-center">
 						<li><a data-scroll href="#crossfit">Crossfit</a></li>
 						<li><a data-scroll href="#depoimentos">Depoimentos</a></li>
-						<li><a data-scroll href="#fotos">@bunker_cf</a></li>
+						<li><a data-scroll href="#horarios">Horários</a></li>
 						<li><a data-scroll href="#localizacao">Localização</a></li>
 					</ul>
 				</nav>
@@ -48,7 +48,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	      </div>
 	      <div class="modal-body">
 	      		<p>Participe de um treino real de Crossfit e entenda melhor como podemos te ajudar. O que está esperando? :)</p>
-				<form action="" role="form" data-toggle="validator" id="leadmais-form">
+				<form id="leadmais-form" data-parsley-validate>
+
 					<input type="hidden" name="data[Account][token]" 	value="<?php echo LEADMAIS_TOKEN;?>"  />
 					<input type="hidden" name="data[Lead][interesting]" value="<?php echo LEADMAIS_INTERESTING?>" />
 					<input type="hidden" name="data[Product][token]" 	value="<?php echo LEADMAIS_PRODUCT;?>"  />	
@@ -57,19 +58,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 					<div class="form-group has-feedback">
 						<label for="nome" class="sr-only">Nome</label>
-						<input name="data[Lead][title]" id="leadmais-title" type="text" placeholder="Seu Nome" class="form-control" value="<?php echo ( !empty( $coockie) ) ? $coockie['title'] : '';?>" required />
+						<input class="form-control" type="text"   name="data[Lead][title]" 		id="leadmais-title" 	placeholder="Seu Nome" data-parsley-required />
 					</div>
 					<div class="form-group has-feedback">
-						<input name="data[Lead][email]" id="leadmais-email" type="email" placeholder="Seu E-mail" class="form-control" value="<?php echo ( !empty( $coockie) ) ? $coockie['email'] : '';?>" required />
+						<input class="form-control" type="email"  name="data[Lead][email]" 		id="leadmais-email" 	placeholder="Seu E-mail" data-parsley-required />
 					</div>
 					<div class="form-group has-feedback">
-						<input name="data[Lead][phone]" id="leadmais-phone" type="text" placeholder="DDD + Celular ou Fixo" class="form-control telefone" value="<?php echo ( !empty( $coockie) ) ? $coockie['phone'] : '';?>" required />
+						<input class="form-control" type="text"   name="data[Lead][phone]" 		id="leadmais-phone" 	placeholder="DDD + Celular ou Fixo" class="telefone" data-parsley-required />
 					</div>
 					<div class="form-group">
-						<textarea name="data[Attribute][mensagem]" id="leadmais-mensagem" placeholder="Mensagem" rows="2" class="form-control"></textarea>
+						<textarea class="form-control" name="data[Attribute][message]" 			placeholder="Mensagem" rows="2"></textarea>
 					</div>
 					<div class="form-group">
-						<button class="btn btn-success btn-lg btn-block" id="leadmais-submit">Enviar</button>
+						<button id="leadmais-submit" class="btn btn-success btn-lg btn-block" type="submit">Enviar</button>
 					</div>
 				</form>
 	      </div>
@@ -116,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 									<ul class="list-unstyled nav navbar-nav">
 										<li><a data-scroll href="#crossfit">Crossfit</a></li>
 										<li><a data-scroll href="#depoimentos">Depoimentos</a></li>
-										<li><a data-scroll href="#fotos">@bunker_cf</a></li>
+										<li><a data-scroll href="#horarios">Horários</a></li>
 										<li><a data-scroll href="#localizacao">Localização</a></li>
 										<li class="hidden-md"><a href="javascript:void(0);"><span class="glyphicon glyphicon-earphone"></span> 81 3040-6063</a></li>
 									</ul>
@@ -263,7 +264,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 			</div>
 		</div>
 
-		<span id="fotos"></span>
 		<section class="middle middle-margin blocos">
 			<div class="container">
 				<div class="title">
@@ -303,7 +303,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		</div>
 
 
-		<span id="fotos"></span>
+		<span id="horarios"></span>
 		<section class="middle middle-margin blocos">
 			<div class="container">
 				<div class="title">

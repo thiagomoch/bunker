@@ -22,47 +22,36 @@
 	<!--<script src="//code.jquery.com/jquery-3.1.0.slim.min.js"></script>-->
 	<script src="https://apis.google.com/js/platform.js"></script>
 	<script src="http://www.jqueryscript.net/demo/Responsive-Background-Video-Plugin-With-Parallax-Effect-backgroundVideo/backgroundVideo.js"></script>
-	
-
-	<script src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.0/parsley.min.js"></script>
-	<script src="//cdn.jsdelivr.net/parsleyjs/2.7.1/i18n/pt-br.js"></script>
 	<script type="text/javascript" src="<?php echo URL_SCRIPT_LEADMAIS;?>"></script>
 	<script>
 
-	var leadmais_redirect_url 	= "obrigado.php";
-	var leadmais_validate 		= false;
+	var leadmais_redirect_url 	= "<?php echo URL_SITE;?>/obrigado.php";
+	var leadmais_text_button 	= "Enviar";
 
-	$(document).ready(function(){
-
-			$("#leadmais-form").on('submit', function(e) {
-
-    		var form = $(this);
-
-    		if (form.parsley().isValid()) {
-      	
-      			APP_LEADMAIS.add_leadmais();
-			}
+	$( document ).ready(function(){
+			
+		$('#leadmais-form').validator().on('submit', function (e) {
+			
+			$('#leadmais-submit').html('Enviando...');
+			$('#leadmais-submit').attr('disabled', 'disabled');
+			
+			APP_LEADMAIS.add_leadmais();
+			
 			return false;
-  		});
+		});
 	});
-
-	</script>
-	
-	<script src="//leadmais.com.br/js/leadmais-script.v2.js"></script>
-
-	<script>
 
 	$(document).ready(function($) {
 
-		// $(".telefone").mask("(00) 0000-00009");
+		$(".telefone").mask("(00) 0000-00009");
 
-		// $('.telefone').blur(function(event) {
-		// 	if($(this).val().length == 15){ 
-		// 		$('.telefone').mask('(00) 00000-0009');
-		// 	} else {
-		// 		$('.telefone').mask('(00) 0000-00009');
-		// 	}
-		// });
+		$('.telefone').blur(function(event) {
+			if($(this).val().length == 15){ 
+				$('.telefone').mask('(00) 00000-0009');
+			} else {
+				$('.telefone').mask('(00) 0000-00009');
+			}
+		});
 
 		function scrollTop() {
 			return document.body.scrollTop || document.documentElement.scrollTop;
