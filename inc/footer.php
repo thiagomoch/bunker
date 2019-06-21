@@ -3,124 +3,83 @@
 		<div class="container">
 			© Bunker Equilíbrio Crossfit.
 		</div>
-	</footer> -->
+	</footer>
+	 -->
+	<script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8&appId=147053698705729";
-	fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/smooth-scroll/10.2.1/js/smooth-scroll.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.8/validator.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.9/jquery.mask.min.js"></script>
-	<!--<script src="//code.jquery.com/jquery-3.1.0.slim.min.js"></script>-->
-	<script src="https://apis.google.com/js/platform.js"></script>
-	<script src="http://www.jqueryscript.net/demo/Responsive-Background-Video-Plugin-With-Parallax-Effect-backgroundVideo/backgroundVideo.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.0/smooth-scroll.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 	
-
 	<script src="//cdnjs.cloudflare.com/ajax/libs/parsley.js/2.7.0/parsley.min.js"></script>
 	<script src="//cdn.jsdelivr.net/parsleyjs/2.7.1/i18n/pt-br.js"></script>
-	<script type="text/javascript" src="<?php echo URL_SCRIPT_LEADMAIS;?>"></script>
-	<script>
 
-	var leadmais_redirect_url 	= "obrigado.php";
-	var leadmais_validate 		= false;
-
-	$(document).ready(function(){
-
-			$("#leadmais-form").on('submit', function(e) {
-
-    		var form = $(this);
-
-    		if (form.parsley().isValid()) {
-      	
-      			APP_LEADMAIS.add_leadmais();
-			}
-			return false;
-  		});
-	});
-
+	<!-- WhatsHelp.io widget -->
+	<script type="text/javascript">
+		(function () {
+			var options = {
+				whatsapp: "+558192936344", // WhatsApp number
+				call_to_action: "Posso ajudar?!", // Call to action
+				position: "right", // Position may be 'right' or 'left'
+			};
+			var proto = document.location.protocol, host = "whatshelp.io", url = proto + "//static." + host;
+			var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+			s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+			var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+		})();
 	</script>
-	
-	<script src="//leadmais.com.br/js/leadmais-script.v2.js"></script>
+	<!-- /WhatsHelp.io widget -->
 
 	<script>
 
 	$(document).ready(function($) {
 
-		// $(".telefone").mask("(00) 0000-00009");
-
-		// $('.telefone').blur(function(event) {
-		// 	if($(this).val().length == 15){ 
-		// 		$('.telefone').mask('(00) 00000-0009');
-		// 	} else {
-		// 		$('.telefone').mask('(00) 0000-00009');
-		// 	}
-		// });
-
-		function scrollTop() {
-			return document.body.scrollTop || document.documentElement.scrollTop;
-		}
-
-		window.onscroll = function(){
-			var y_fixo = $(".content").offset().top;
-
-			if(y_fixo - scrollTop() <= 100){
-				$(".agende").addClass("agende-show");
-			}else{
-				$(".agende").removeClass("agende-show");
-			}
-		}
-	});
-
-	$(document).ready(function() {
-
-		$(".video").click(function() {
-
-			$.fancybox({
-				beforeShow: function(){
-				  $(".fancybox-skin").css("backgroundColor","transparent");
-				 },
-				 helpers: {
-				   overlay: {
-				     locked: false
-				   }
-				 },
-				'padding'		: 0,
-				'autoScale'		: false,
-				'transitionIn'	: 'none',
-				'transitionOut'	: 'none',
-				'background'	: 'none',
-				'title'			: this.title,
-				'href'			: this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
-				'type'			: 'swf',
-				'swf'			: {
-				'wmode'				: 'transparent',
-				'allowfullscreen'	: 'true'
+		$('#leadmais-form').submit(function(e){
+			e.preventDefault();
+			$.ajax({
+				url:'https://hooks.zapier.com/hooks/catch/921122/oydymmt/',
+				type:'post',
+				data:$('#leadmais-form').serialize(),
+				success:function(){
+					// Redirect to another success page
+					window.location = "obrigado.php";
 				}
 			});
-
-			return false;
 		});
 
-		$(".fancybox").fancybox({
-			helpers: {
-				overlay: {
-				  locked: false
-				}
+		$(".telefone").mask("(00) 0000-00009");
+
+		$('.telefone').blur(function(event) {
+			if($(this).val().length == 15){ 
+				$('.telefone').mask('(00) 00000-0009');
+			} else {
+				$('.telefone').mask('(00) 0000-00009');
 			}
 		});
-		
+
+		// function scrollTop() {
+		// 	return document.body.scrollTop || document.documentElement.scrollTop;
+		// }
+
+		// window.onscroll = function(){
+		// 	var y_fixo = $(".content").offset().top;
+
+		// 	if(y_fixo - scrollTop() <= 100){
+		// 		$(".agende").addClass("agende-show");
+		// 	}else{
+		// 		$(".agende").removeClass("agende-show");
+		// 	}
+		// }
 	});
 
 	</script>
 	<script>
+
+	var scroll = new SmoothScroll('a[href*="#"]');
+
 
 	/* detect touch */
 	if("ontouchstart" in window){
@@ -221,12 +180,12 @@
 	    parallaxPosition();
 	}
 	
-	var middle_content_width = $('.middle').width();
-	if ( middle_content_width > 767 ) {
-		$('#my-video').backgroundVideo({
-			minimumVideoWidth: 768,
-		});
-	};
+	// var middle_content_width = $('.middle').width();
+	// if ( middle_content_width > 767 ) {
+	// 	$('#my-video').backgroundVideo({
+	// 		minimumVideoWidth: 768,
+	// 	});
+	// };
 
-	smoothScroll.init();
+
 	</script>

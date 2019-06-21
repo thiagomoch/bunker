@@ -1,27 +1,5 @@
 <?php
 
-
-// error_reporting(E_STRICT);
-// error_reporting(E_ALL);
-// ini_set("display_errors", 1);
-
-// if ( strpos("localhost", $_SERVER["HTTP_HOST"]) !== false ) {
-
-// 	define("URL_SCRIPT_LEADMAIS", 	"//leadmaisteste.com.br/js/leadmais-script.js" );
-// 	define("LEADMAIS_TOKEN", 		"a552c11350622363dd3af302af2fbfb5" );
-// 	define("LEADMAIS_INTERESTING", 	"Crossfit" );
-// 	define("LEADMAIS_PRODUCT", 		"8343d521ef9fef84f1dd96b516980b4b" );
-// 	define("LEADMAIS_SOURCE", 		"19f38749422e9de968c2ecf47637ffab" );
-
-// } else {
-
-	define("URL_SCRIPT_LEADMAIS", 	"//leadmais.com.br/js/leadmais-script.js" );
-	define("LEADMAIS_TOKEN", 		"a552c11350622363dd3af302af2fbfb5" );
-	define("LEADMAIS_INTERESTING", 	"Crossfit" );
-	define("LEADMAIS_PRODUCT", 		"8343d521ef9fef84f1dd96b516980b4b" );
-	define("LEADMAIS_SOURCE", 		"19f38749422e9de968c2ecf47637ffab" );
-// }
-
 /////////// BUSCANDO VIDEOS DO YOUTUBE ///////////////////
 
 $videos = array();
