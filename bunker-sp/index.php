@@ -1,7 +1,7 @@
 <?php 
 define("URL_SITE", 			"http://" . $_SERVER['HTTP_HOST'] . str_replace("index.php", "", $_SERVER['PHP_SELF']));
 
-include('inc/head.php');
+//include('inc/head.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,9 +27,9 @@ include('inc/head.php');
 				<nav class="">
 					<ul class="list-unstyled text-center">
 						<li><a data-scroll href="#crossfit">Sobre o Crossfit</a></li>
-						<li><a data-scroll href="#depoimentos">Depoimentos</a></li>
+						<li><a data-scroll href="#novidades">Novidades</a></li>
 						<li><a data-scroll href="#localizacao">Localização</a></li>
-						<li><a href="javascript:void(0);"><span class="glyphicon glyphicon-earphone"></span> 81 3040-6063</a></li>
+						<li><a href="javascript:void(0);"><span class="glyphicon glyphicon-earphone"></span> 11 94598-8473</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -74,14 +74,14 @@ include('inc/head.php');
 	<header>
 		<div class="overlay"></div>
 		<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-			<source src="img/background.mp4" type="video/mp4">
+			<source src="img/background.mp4?2" type="video/mp4">
 		</video>
 		<div class="container" style="height:75%;">
 			<div class="container">
 				<div class="row pt-4">
 					<div class="brand col-8 col-sm-4">
 						<h1 class="header-logo">
-							<a href="http://www.bunkercf.com.br">
+							<a href="https://www.bunkercf.com.br">
 								<img src="img/marca.png" alt="Bunker Crossfit">
 								<span class="sr-only">Bunker Crossfit</span>
 							</a>
@@ -100,9 +100,9 @@ include('inc/head.php');
 					<div class="menu-blocked col-sm-8 d-none d-sm-block pt-2">
 						<ul class="nav justify-content-end">
 							<li class="nav-item"><a class="nav-link text-white" href="#crossfit">Sobre o Crossfit</a></li>
-							<li class="nav-item"><a class="nav-link text-white" href="#depoimentos">Depoimentos</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="#novidades">Novidades</a></li>
 							<li class="nav-item"><a class="nav-link text-white" href="#localizacao">Localização</a></li>
-							<li class="nav-item"><a class="nav-link text-white" href="javascript:void(0);"><i class="fas fa-phone"></i> 81 3040-6063</a></li>
+							<li class="nav-item"><a class="nav-link text-white" href="javascript:void(0);"><i class="fas fa-phone"></i> 11 94598-8473</a></li>
 						</ul>
 					</div>
 				</div>
@@ -113,9 +113,9 @@ include('inc/head.php');
 					<p>O CrossFit é um programa de treinamento de força e condicionamento físico geral baseado em movimentos funcionais, feitos em alta intensidade e constantemente variados.</p>
 					<div class="container">
 						<div class="row">
-							<div class="passos col-sm d-none d-sm-block"><a data-fancybox href="https://www.youtube.com/watch?v=BUNVLyOSeRg?fs=1&amp;autoplay=1" class="btn video btn-light btn-block py-3"><i class="fas fa-play-circle"></i> Entenda o Crossfit</a></div>
+							<div class="passos col-sm d-none d-sm-block"></div>
 							<div class="passos col-sm"><a href="#" class="btn btn-success btn-block py-3" data-toggle="modal" data-target="#exampleModal"><i class="far fa-calendar-alt"></i> Agende sua Aula Experimental</a></div>
-							<div class="passos col-sm d-none d-sm-block"><a data-scroll href="#depoimentos" class="btn btn-light btn-block py-3"><i class="fas fa-hand-peace"></i> Mude de Vida</a></div>
+							<div class="passos col-sm d-none d-sm-block"></div>
 						</div>
 					</div>
 				</div>
@@ -181,94 +181,25 @@ include('inc/head.php');
 			</div>
 		</section>
 
-		<div class="not-fullscreen background background-familia parallax" style="background-image:url('img/bg1.jpg');" data-img-width="1600" data-img-height="1064">
-			<div class="container middle-parallax">
-				<div class="content-parallax">
-					<h2>Faça parte da família Bunker</h2>
-					<p>Agende sua aula experimental e vivencie um treino real de Crossfit. O que está esperando?</p>
-				</div>
-			</div>
-		</div>
-
-		<span id="depoimentos"></span>
-		<section class="middle middle-margin blocos">
-			<div class="container">
-				<div class="title">
-					<h2>Quem já pratica</h2>
-					<p>Pessoas comuns, objetivos diversos, evolução, superação e muita saúde. Conheça as histórias inspiradoras dos nossos alunos. Você é o próximo!</p>
-				</div>
-				<div class="clearfix row">
-					<?php
-						if ( !empty( $videos ) ) {
-							
-							foreach ( $videos as $video ) {
-								
-								?>
-								<div class="col-6 col-sm-3 mb-4 bloco">
-									<div class="">
-										<?php
-											/*
-											<iframe class="embed-responsive-item" src="//www.youtube.com/embed/<?php echo $video["id"];?>?rel=0&amp;showinfo=0&amp;autoplay=0&amp;controls=1"></iframe>
-											 */
-										?>
-										<a class="video" data-fancybox href="https://www.youtube.com/watch?v=<?php echo $video["id"];?>?fs=1&amp;autoplay=1" >
-											<img src="<?php echo $video["imagem"];?>" alt="<?php echo $video["titulo"];?>" title="<?php echo $video["titulo"];?>" class="img-fluid" />
-										</a>
-									</div>
-									<p><?php echo $video["titulo"];?></p>
-								</div>
-								<?php 
-							}
-						}
-					?>
-				</div>
-			</div>
-		</section>
-
+		<span id="novidades"></span>
 		<div class="not-fullscreen background background-familia parallax" style="background-image:url('img/bg8.jpg');" data-img-width="1600" data-img-height="1064">
 			<div class="container middle-parallax">
 				<div class="content-parallax">
 					<h2>Eventos e Novidades</h2>
-					<p>Fique por dentro das novidades da Bunker através das redes sociais.</p>
+					<p>Fique por dentro das novidades da Bunker Sampa através das redes sociais.</p>
 					<div class="text-center">
-						<a href="https://www.instagram.com/bunker_cf/" target="_blank" class="text-white"><i class="fab fa-3x pr-2 fa-instagram"></i></a>
-						<a href="https://www.youtube.com/channel/UC57oZgESdKYSpcI9igiV_4Q" target="_blank" class="text-white"><i class="fab fa-3x pr-2 fa-youtube"></i></a>
-						<a href="https://www.facebook.com/bunkercf/?ref=br_rs" target="_blank" class="text-white"><i class="fab fa-3x fa-facebook"></i></a>
+						<a href="https://www.instagram.com/bunker_sampa/" target="_blank" class="text-white"><i class="fab fa-3x pr-2 fa-instagram"></i></a>
+						<a href="https://www.facebook.com/CrossFitSampa/" target="_blank" class="text-white"><i class="fab fa-3x fa-facebook"></i></a>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<section class="middle middle-margin blocos">
-			<div class="container">
-				<div class="title">
-					<h2>@bunker_cf</h2>
-					<p>Acompanhe a bunker no Instagram!</p></h2>
-				</div>
-				<div class="clearfix row">
-					<?php
-						if ( !empty( $imagens ) ) {
-							foreach ( $imagens as $imagem ) {
-								?>
-								<div class="col-xs-6 col-sm-3 col-md-3 col-lg-3 bloco">
-									<a class="fancybox" rel="group" href="<?php echo $imagem["standard_resolution"];?>" >
-										<img src="<?php echo $imagem["standard_resolution"];?>" title="<?php echo $imagem["caption"];?>" class="img-fluid" />
-									</a>
-								</div>
-								<?php 
-							}
-						}
-					?>
-				</div>
-			</div>
-		</section>
-
-		<span id="localizacao"></span>
-		<div class="not-fullscreen background background-familia parallax" style="background-image:url('img/bg6.jpg');" data-img-width="1600" data-img-height="1064">
+		<div class="not-fullscreen background background-familia">
 			<div class="container middle-parallax como-chegar">
 				<div class="content-parallax">
 					<h2>Como Chegar?</h2>
-					<p>R. José da Silva Lucena, 515 - Boa Viagem - Recife/PE. <br> <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:8133393333">81 3040-6063</a></p>
+					<p>Rua Traipú, 205 - Pacaembu, São Paulo - SP, 01235-000. <br> <i class="fa fa-phone" aria-hidden="true"></i> <a class="tel" href="tel:11945988473">11 94598-8473</a></p>
 					<div class="text-center">
 						<a href="https://goo.gl/maps/xhXkBovzx1r" target="_blank" class="btn py-2 btn-light"><i class="fas fa-map-marker-alt pr-2"></i> Acessar Mapa</a>
 					</div>

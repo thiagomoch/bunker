@@ -1,0 +1,560 @@
+//@import "_bootstrap.scss"; 
+//@import "_mixins.scss"; 
+
+$azul: #2267af;
+$verde: #c7d84c;
+$vermelho: #d23055;
+$cinza: #373737;
+
+header {
+	position: relative;
+	background-color: black;
+	height: 100vh;
+	min-height: 25rem;
+	width: 100%;
+	overflow: hidden;
+  }
+  
+  header video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: 0;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+  }
+  
+  header .container {
+	position: relative;
+	z-index: 2;
+  }
+  
+  header .overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: black;
+	opacity: 0.5;
+	z-index: 1;
+  }
+  
+  @media (pointer: coarse) and (hover: none) {
+	header {
+	  background: url('https://img.youtube.com/vi/kv-_pDIgkRc/maxresdefault.jpg') black no-repeat center center scroll;
+	}
+	header video {
+	//   display: none;
+	}
+  }
+  
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+
+html, body {
+    height:100%;
+}
+body {
+	font-family: 'Oxygen', sans-serif;
+	font-weight:400;
+	background:#222;
+	color:#eee;
+}
+b,strong{
+	font-weight:700;
+}
+.margin-20{
+	margin:20px auto;
+}
+.margin-10{
+	margin:10px auto;
+}
+.no-list{
+  margin: 0;
+  padding: 0; 
+  li{
+    list-style: none;
+  }
+}
+.alert{
+	color:#666 !important;
+}
+a{
+	color:#333;
+}
+a:hover{
+	opacity: 0.9;
+	text-decoration: none;
+}
+.img-center {
+	margin:0 auto;
+}
+h1,h2,h3,h4{
+	margin:0;
+	font-weight:600;
+}
+h1{
+	font-size: 30px;
+	letter-spacing: -1px;
+}
+h2{
+	font-size:20px;
+	letter-spacing: -1px;
+}
+h3{
+	font-size:20px;
+	letter-spacing: -1px;
+	color: $verde;
+	font-weight:400;
+}
+
+.btn{
+	border-radius: 3px;
+}
+.btn:hover{
+	opacity: 0.9;
+}
+.btn-primary{
+	
+}
+.btn-success{
+	background: $verde !important;
+	color:#000 !important;
+}
+.btn-success:hover,.btn-success:active{
+	color:#000 !important;
+}
+
+.background {
+	position:relative;
+    background-repeat:no-repeat;
+    /* custom background-position */
+    background-position:50% 50%;
+    /* ie8- graceful degradation */
+    background-position:50% 50%9 !important;
+}
+/* fullscreen setup */
+
+.fullscreen,
+.content-a {
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+.fullscreen.overflow,
+.fullscreen.overflow .content-a {
+    height:auto;
+    min-height:100%;
+}
+
+/* content centering styles */
+.content-a {
+    display:table;
+}
+.content-b {
+    display:table-cell;
+    position:relative;
+    vertical-align:middle;
+    text-align:center;
+}
+
+/*
+	HEADER
+*/
+
+header{
+	ul.nav{
+		li{
+			a{
+				font-size:12px;
+				color:#eee;
+				text-transform: uppercase;
+			}
+			a:hover{
+				background:#000 !important;
+				color:#fff;
+			}
+			a:active{
+				background:#000 !important;
+				color:#fff;	
+			}
+		}
+		li:active{
+			background:#000 !important;
+			color:#fff;	
+		}
+	}
+}
+#menu-mobile{
+	background:#000;
+	ul{
+		margin-bottom: 0;
+		li{
+			border-bottom:1px solid #333;
+			padding:10px 0;
+			a{
+				color:#fff;
+				display: block
+			}
+		}
+		li:last-child{
+			border:none;
+		}
+	}
+}
+#menu-btn{
+	// margin-top:26px;
+	// margin-right:10px;
+	.icon-bar{
+		display: block;
+		margin: 4px 0px;
+		padding: 1px 9px;
+		background:#FFF;
+	}
+	a.btn-default{
+		background:none !important;
+		padding:8px 14px;
+		border-color:#666 !important;
+	}
+}
+.highlight{
+	// margin-top:230px;
+	p{
+		font-size:16px;
+		max-width:800px;
+		margin:auto;
+		margin-bottom: 30px;
+	}
+	h2{
+		font-size:55px;
+		margin-bottom: 20px;
+		color:$verde;
+	}
+	.passos{
+		// margin-bottom: 10px;
+		span{
+			font-size:18px;
+			height:100vh;
+			vertical-align: middle;
+			// font-size:20px;
+			// // float: left;
+			// margin-right: 6px;
+			// margin-left: 20px;
+			// margin-top: 8px;
+			// color:#CCC;
+		}
+	}
+	a{
+		i{
+			// float: left;
+			// margin-top: 2px;
+			// margin-right: 10px;
+		}
+	}
+}
+.highlight-obrigado{
+	margin-top:50px;
+}
+
+/*
+	MIDDLE
+*/
+
+.table{
+	thead{
+		tr{
+			background:$verde;
+			color:#000;
+		}
+	}
+}
+.middle-margin{
+	padding:60px 0;
+}
+.middle{
+	min-height:500px;
+	.title{
+		text-align:center;
+		margin-bottom: 60px;
+		h2{
+			font-size:35px;
+			display: inline-block;
+			padding-bottom:30px;
+			margin-bottom: 30px;
+			border-bottom:1px solid #444;
+			color:$verde !important;
+		}
+		p{
+			font-size: 16px;
+			max-width: 600px;
+			margin:auto;
+		}
+	}
+}
+.agende{
+	height:100px;
+	width:100%;
+	position:fixed;
+	bottom:-100px;
+	background:#111;
+	border-top:1px solid #333;
+	z-index:1040;
+	display:block;
+	transition: all .3s linear;
+	-o-transition: all .3s linear;
+	-moz-transition: all .3s linear;
+	-webkit-transition: all .3s linear;
+	.container{
+		padding-top:30px;
+		p{
+			font-size:14px;
+		}
+	}
+}
+.agende-show{
+	display:block;
+	bottom:0;
+}
+section.crossfit{
+	.crossfit-3{
+		.col-lg-4{
+			margin-bottom: 40px;
+		}
+		i{
+			font-size:40px;
+			margin-bottom: 10px;
+		}
+		figure{
+			margin-bottom: 10px;
+			text-align: center;
+			img{
+				height: 45px;
+				display: inline-block;
+			}
+		}
+		h3{
+			margin-bottom: 10px;
+		}
+		p{
+			line-height: 20px;
+		}
+	}
+	.crossfit-beneficios{
+		margin-top: 40px;
+		h3{
+			margin-bottom: 20px;
+		}
+		p{
+			margin-right: 40px;
+			line-height: 20px;
+		}
+		figure{
+			margin-top:30px;
+			margin-bottom:30px;
+		}
+		ul{
+			li{
+				margin-bottom: 10px;
+				i{
+					float: left;
+					margin-right: 10px;
+					margin-top: 3px;
+					font-size:16px;
+				}
+			}
+		}
+	}
+}
+section.blocos{
+	.bloco{
+		// margin-bottom: 40px;
+		p{
+			font-style: italic;
+			font-size:15px;
+			color:#CCC;
+			margin-top: 10px;
+		}
+		span{
+			font-weight: bold;
+		}
+	}
+}
+.middle-parallax{
+	// min-height:450px;
+	height:450px;
+	text-align:center;
+	margin-bottom: 60px;
+	display:table;
+	h2{
+		font-size: 30px;
+		display: inline-block;
+		padding-bottom:30px;
+		margin-bottom: 30px;
+		border-bottom:1px solid #333;
+		color:$verde !important;
+	}
+	p{
+		font-size:18px;
+		max-width: 800px;
+		margin:auto;
+	}
+}
+.como-chegar{
+	margin-bottom:0 !important;
+	a.tel{
+		color:#fff;
+	}
+}
+.background-familia{
+	min-height:450px;
+	.middle-parallax{
+		min-height: 450px;
+	}
+	.text-center{
+		margin-top: 40px;
+	}
+}
+.content-parallax {
+    display:table-cell;
+    position:relative;
+    vertical-align:middle;
+    text-align:center;
+}
+.modal{
+	color:#333;
+}
+.btn-facebook{
+	background:#3b5998;
+	color:#fff;
+	border:none;
+}
+.btn-facebook:hover{
+	background:#3b5998;
+	color:#fff;
+}
+.btn-instagram{
+	background:#8a3ab9;
+	color:#fff;
+	border:none;
+}
+.btn-instagram:hover{
+	background:#8a3ab9;
+	color:#fff;
+}
+.btn-youtube{
+	background:#cc181e;
+	color:#fff;
+	border:none;
+}
+.btn-youtube:hover{
+	background:#cc181e;
+	color:#fff;
+}
+/*
+	FOOTER
+*/
+
+footer{
+	margin-bottom:20px;
+}
+
+/*********************
+	MEDIA QUETIES
+*********************/
+
+// LG
+@media only screen and (min-width : 1201px) {
+
+}
+// MD
+// @media only screen and (max-width : 1200px) {
+@media only screen and (max-width : 1366px) {
+	.highlight{
+		// margin-top:140px;
+	}
+	
+}
+// SM
+@media only screen and (max-width : 992px) {
+
+	
+}
+// XS
+@media only screen and (max-width : 768px) {
+	.brand{
+		img{
+			height: 25px;
+		}
+	}
+	.highlight{
+		margin-top:50px;
+		p{
+			font-size: 15px;
+		}
+		h2{
+			font-size: 30px;
+		}		
+	}
+	section.crossfit{
+		.crossfit-beneficios{
+			p{
+				margin-right: 0;
+			}
+		}
+	}
+	.btn{
+		font-size:16px;
+	}
+	.agende{
+		height:75px;
+		.container{
+			padding-top:15px;
+			text-align:center;
+		}
+	}
+}
+@media only screen and (max-width : 480px) {
+	.table-responsive{
+		border:none;
+	}
+}
+

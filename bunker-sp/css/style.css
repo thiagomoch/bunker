@@ -1,0 +1,543 @@
+header {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  header {
+    background: url("https://img.youtube.com/vi/kv-_pDIgkRc/maxresdefault.jpg") black no-repeat center center scroll;
+  }
+}
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Oxygen', sans-serif;
+  font-weight: 400;
+  background: #222;
+  color: #eee;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+.margin-20 {
+  margin: 20px auto;
+}
+
+.margin-10 {
+  margin: 10px auto;
+}
+
+.no-list {
+  margin: 0;
+  padding: 0;
+}
+
+.no-list li {
+  list-style: none;
+}
+
+.alert {
+  color: #666 !important;
+}
+
+a {
+  color: #333;
+}
+
+a:hover {
+  opacity: 0.9;
+  text-decoration: none;
+}
+
+.img-center {
+  margin: 0 auto;
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 30px;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: 20px;
+  letter-spacing: -1px;
+}
+
+h3 {
+  font-size: 20px;
+  letter-spacing: -1px;
+  color: #c7d84c;
+  font-weight: 400;
+}
+
+.btn {
+  border-radius: 3px;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-success {
+  background: #c7d84c !important;
+  color: #000 !important;
+}
+
+.btn-success:hover, .btn-success:active {
+  color: #000 !important;
+}
+
+.background {
+  position: relative;
+  background-repeat: no-repeat;
+  /* custom background-position */
+  background-position: 50% 50%;
+  /* ie8- graceful degradation */
+  background-position: 50% 50% 9 !important;
+}
+
+/* fullscreen setup */
+.fullscreen,
+.content-a {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.fullscreen.overflow,
+.fullscreen.overflow .content-a {
+  height: auto;
+  min-height: 100%;
+}
+
+/* content centering styles */
+.content-a {
+  display: table;
+}
+
+.content-b {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/*
+	HEADER
+*/
+header ul.nav li a {
+  font-size: 12px;
+  color: #eee;
+  text-transform: uppercase;
+}
+
+header ul.nav li a:hover {
+  background: #000 !important;
+  color: #fff;
+}
+
+header ul.nav li a:active {
+  background: #000 !important;
+  color: #fff;
+}
+
+header ul.nav li:active {
+  background: #000 !important;
+  color: #fff;
+}
+
+#menu-mobile {
+  background: #000;
+}
+
+#menu-mobile ul {
+  margin-bottom: 0;
+}
+
+#menu-mobile ul li {
+  border-bottom: 1px solid #333;
+  padding: 10px 0;
+}
+
+#menu-mobile ul li a {
+  color: #fff;
+  display: block;
+}
+
+#menu-mobile ul li:last-child {
+  border: none;
+}
+
+#menu-btn .icon-bar {
+  display: block;
+  margin: 4px 0px;
+  padding: 1px 9px;
+  background: #FFF;
+}
+
+#menu-btn a.btn-default {
+  background: none !important;
+  padding: 8px 14px;
+  border-color: #666 !important;
+}
+
+.highlight p {
+  font-size: 16px;
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.highlight h2 {
+  font-size: 55px;
+  margin-bottom: 20px;
+  color: #c7d84c;
+}
+
+.highlight .passos span {
+  font-size: 18px;
+  height: 100vh;
+  vertical-align: middle;
+}
+
+.highlight-obrigado {
+  margin-top: 50px;
+}
+
+/*
+	MIDDLE
+*/
+.table thead tr {
+  background: #c7d84c;
+  color: #000;
+}
+
+.middle-margin {
+  padding: 60px 0;
+}
+
+.middle {
+  min-height: 500px;
+}
+
+.middle .title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.middle .title h2 {
+  font-size: 35px;
+  display: inline-block;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #444;
+  color: #c7d84c !important;
+}
+
+.middle .title p {
+  font-size: 16px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.agende {
+  height: 100px;
+  width: 100%;
+  position: fixed;
+  bottom: -100px;
+  background: #111;
+  border-top: 1px solid #333;
+  z-index: 1040;
+  display: block;
+  transition: all .3s linear;
+  -o-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -webkit-transition: all .3s linear;
+}
+
+.agende .container {
+  padding-top: 30px;
+}
+
+.agende .container p {
+  font-size: 14px;
+}
+
+.agende-show {
+  display: block;
+  bottom: 0;
+}
+
+section.crossfit .crossfit-3 .col-lg-4 {
+  margin-bottom: 40px;
+}
+
+section.crossfit .crossfit-3 i {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+section.crossfit .crossfit-3 figure {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+section.crossfit .crossfit-3 figure img {
+  height: 45px;
+  display: inline-block;
+}
+
+section.crossfit .crossfit-3 h3 {
+  margin-bottom: 10px;
+}
+
+section.crossfit .crossfit-3 p {
+  line-height: 20px;
+}
+
+section.crossfit .crossfit-beneficios {
+  margin-top: 40px;
+}
+
+section.crossfit .crossfit-beneficios h3 {
+  margin-bottom: 20px;
+}
+
+section.crossfit .crossfit-beneficios p {
+  margin-right: 40px;
+  line-height: 20px;
+}
+
+section.crossfit .crossfit-beneficios figure {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+section.crossfit .crossfit-beneficios ul li {
+  margin-bottom: 10px;
+}
+
+section.crossfit .crossfit-beneficios ul li i {
+  float: left;
+  margin-right: 10px;
+  margin-top: 3px;
+  font-size: 16px;
+}
+
+section.blocos .bloco p {
+  font-style: italic;
+  font-size: 15px;
+  color: #CCC;
+  margin-top: 10px;
+}
+
+section.blocos .bloco span {
+  font-weight: bold;
+}
+
+.middle-parallax {
+  height: 450px;
+  text-align: center;
+  margin-bottom: 60px;
+  display: table;
+}
+
+.middle-parallax h2 {
+  font-size: 30px;
+  display: inline-block;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333;
+  color: #c7d84c !important;
+}
+
+.middle-parallax p {
+  font-size: 18px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.como-chegar {
+  margin-bottom: 0 !important;
+}
+
+.como-chegar a.tel {
+  color: #fff;
+}
+
+.background-familia {
+  min-height: 450px;
+}
+
+.background-familia .middle-parallax {
+  min-height: 450px;
+}
+
+.background-familia .text-center {
+  margin-top: 40px;
+}
+
+.content-parallax {
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.modal {
+  color: #333;
+}
+
+.btn-facebook {
+  background: #3b5998;
+  color: #fff;
+  border: none;
+}
+
+.btn-facebook:hover {
+  background: #3b5998;
+  color: #fff;
+}
+
+.btn-instagram {
+  background: #8a3ab9;
+  color: #fff;
+  border: none;
+}
+
+.btn-instagram:hover {
+  background: #8a3ab9;
+  color: #fff;
+}
+
+.btn-youtube {
+  background: #cc181e;
+  color: #fff;
+  border: none;
+}
+
+.btn-youtube:hover {
+  background: #cc181e;
+  color: #fff;
+}
+
+/*
+	FOOTER
+*/
+footer {
+  margin-bottom: 20px;
+}
+
+/*********************
+	MEDIA QUETIES
+*********************/
+@media only screen and (max-width: 768px) {
+  .brand img {
+    height: 25px;
+  }
+  .highlight {
+    margin-top: 50px;
+  }
+  .highlight p {
+    font-size: 15px;
+  }
+  .highlight h2 {
+    font-size: 30px;
+  }
+  section.crossfit .crossfit-beneficios p {
+    margin-right: 0;
+  }
+  .btn {
+    font-size: 16px;
+  }
+  .agende {
+    height: 75px;
+  }
+  .agende .container {
+    padding-top: 15px;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .table-responsive {
+    border: none;
+  }
+}
+/*# sourceMappingURL=style.css.map */
